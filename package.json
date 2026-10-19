@@ -1,0 +1,6 @@
+{
+  "name": "afeiii-portal",
+  "private": true,
+  "type": "module",
+  "scripts": { "build": "node scripts/build.mjs", "check": "node --check scripts/build.mjs && node --check public/app.js" }
+}
