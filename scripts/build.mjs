@@ -1,6 +1,7 @@
 import { mkdir, readFile, writeFile, cp } from "node:fs/promises";
 import { execFileSync } from "node:child_process";
 import { resolve } from "node:path";
+import { guides, guideHomeSection, guideIndex, guideArticle } from "./guides.mjs";
 
 const origin = "https://afeiii.com";
 const sites = [
@@ -65,7 +66,7 @@ const sites = [
   },
 ];
 const nav = `<a href="/">主站</a>${sites.map((s) => `<a href="https://${s.host}.afeiii.com/">${s.name}</a>`).join("")}`;
-const footer = `<footer class="footer"><div class="wrap"><div class="footer-row"><span>© ${new Date().getFullYear()} 十三月 · afeiii.com</span><nav aria-label="网站信息"><a href="/about/">关于</a><a href="/privacy/">隐私说明</a><a href="/terms/">使用条款</a><a href="mailto:support@afeiii.com">联系反馈</a><a href="https://status.afeiii.com/">服务状态</a><a href="https://github.com/bigzhihui/afeiii-portal">本站源码</a></nav></div><p>基于开源工具构建，各项目保留原作者署名与许可证。具体功能及数据处理方式以各站说明为准。</p></div></footer>`;
+const footer = `<footer class="footer"><div class="wrap"><div class="footer-row"><span>© ${new Date().getFullYear()} 十三月 · afeiii.com</span><nav aria-label="网站信息"><a href="/guides/">使用指南</a><a href="/about/">关于</a><a href="/privacy/">隐私说明</a><a href="/terms/">使用条款</a><a href="mailto:support@afeiii.com">联系反馈</a><a href="https://status.afeiii.com/">服务状态</a><a href="https://github.com/bigzhihui/afeiii-portal">本站源码</a></nav></div><p>基于开源工具构建，各项目保留原作者署名与许可证。具体功能及数据处理方式以各站说明为准。</p></div></footer>`;
 const token =
   process.env.CF_WEB_ANALYTICS_TOKEN ?? "1de4c686fa1e40889ff348db015c2e5f";
 if (token && !/^[a-f0-9]{32}$/i.test(token))
@@ -73,8 +74,11 @@ if (token && !/^[a-f0-9]{32}$/i.test(token))
 const beacon = token
   ? `<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='${JSON.stringify({ token })}'></script>`
   : "";
-function page(title, description, path, body, script = false) {
-  return `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${title} · 十三月</title><meta name="description" content="${description}"><link rel="canonical" href="${origin}${path}"><meta property="og:type" content="website"><meta property="og:title" content="${title} · 十三月"><meta property="og:description" content="${description}"><meta property="og:url" content="${origin}${path}"><meta name="theme-color" content="#f6f5ef"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css"><script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@type": "WebSite", name: "十三月", url: origin, description })}</script>${script ? '<script defer src="/app.js"></script>' : ""}</head><body><a class="skip" href="#main">跳到主要内容</a><header><div class="wrap topbar"><a class="brand" href="/" aria-label="十三月首页"><span class="brand-mark" aria-hidden="true">13</span><span>十三月<small>AFEIII.COM</small></span></a><nav class="topnav" aria-label="主导航"><a href="/#tools">全部工具</a><a class="about-link" href="/about/">关于十三月</a><a class="status-link" href="https://status.afeiii.com/">服务状态 ↗</a></nav></div></header>${body}${footer}${beacon}</body></html>`;
+function page(title, description, path, body, script = false, article = null) {
+  const schema = article
+    ? { "@context": "https://schema.org", "@type": "Article", headline: title, description, mainEntityOfPage: `${origin}${path}`, image: `${origin}/guides/images/${article.image}.jpg`, datePublished: article.date, dateModified: article.date, author: { "@type": "Organization", name: "十三月维护者", url: `${origin}/about/` }, publisher: { "@type": "Organization", name: "十三月", url: origin } }
+    : { "@context": "https://schema.org", "@type": path === "/" ? "WebSite" : "WebPage", name: title, url: `${origin}${path}`, description };
+  return `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${title} · 十三月</title><meta name="description" content="${description}"><link rel="canonical" href="${origin}${path}"><meta property="og:type" content="${article ? "article" : "website"}"><meta property="og:title" content="${title} · 十三月"><meta property="og:description" content="${description}"><meta property="og:url" content="${origin}${path}"><meta name="theme-color" content="#f6f5ef"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css"><script type="application/ld+json">${JSON.stringify(schema)}</script>${script ? '<script defer src="/app.js"></script>' : ""}</head><body><a class="skip" href="#main">跳到主要内容</a><header><div class="wrap topbar"><a class="brand" href="/" aria-label="十三月首页"><span class="brand-mark" aria-hidden="true">13</span><span>十三月<small>AFEIII.COM</small></span></a><nav class="topnav" aria-label="主导航"><a href="/#tools">全部工具</a><a href="/guides/"${path === "/guides/" ? ' aria-current="page"' : ""}>使用指南</a><a class="about-link" href="/about/">关于十三月</a><a class="status-link" href="https://status.afeiii.com/">服务状态 ↗</a></nav></div></header>${body}${footer}${beacon}</body></html>`;
 }
 const cards = sites
   .map(
@@ -82,7 +86,7 @@ const cards = sites
       `<a class="tool" data-tool data-category="${s.category}" style="--tone:${s.tone};--wash:${s.wash}" href="https://${s.host}.afeiii.com/"><div class="tool-top"><span class="icon" aria-hidden="true">${s.icon}</span><span class="badge">${s.badge}</span></div><h3>${s.name}</h3><p>${s.description}</p><div class="tags">${s.tags.map((t) => `<span>${t}</span>`).join("")}</div><div class="card-end"><span>${s.host}.afeiii.com</span><strong aria-hidden="true">↗</strong></div></a>`,
   )
   .join("");
-const home = `<main id="main" class="wrap"><section class="hero" aria-labelledby="hero-title"><div><span class="eyebrow">A SMALL TOOL FOR EVERYDAY WORK</span><h1 id="hero-title">把手头的事，<br><em>顺手做完。</em></h1><p>处理文件、整理文档、写好简历、检查网站。<br>五个实用工具站，从这里开始。</p><div class="hero-note"><span>开源项目构建</span><span>中文使用体验</span><span>清楚说明数据去向</span></div></div><div class="search-panel"><label for="tool-search">今天想完成什么？</label><div class="search-box"><span aria-hidden="true">⌕</span><input id="tool-search" type="search" placeholder="试试 PDF、图片、JSON、简历…" autocomplete="off" aria-controls="tool-list"><kbd aria-hidden="true">/</kbd></div><p class="search-help">正在找：<a href="https://pdf.afeiii.com/zh/merge-pdf">合并 PDF</a> · <a href="https://convert.afeiii.com/">图片转换</a> · <a href="https://tools.afeiii.com/json-prettify">JSON 格式化</a></p></div></section><section id="tools" aria-labelledby="tools-title"><div class="section-head"><div><h2 id="tools-title">选一个工具，开始处理</h2><p>按用途找入口，也可以直接搜索。</p></div><button class="text-button" id="clear-search">重置筛选</button></div><div class="filters" role="group" aria-label="按用途筛选"><button data-filter="all" aria-pressed="true">全部工具</button><button data-filter="documents" aria-pressed="false">PDF 文档</button><button data-filter="media" aria-pressed="false">图片与音视频</button><button data-filter="development" aria-pressed="false">开发与网站</button><button data-filter="career" aria-pressed="false">求职简历</button></div><div class="cards" id="tool-list">${cards}</div><p class="search-result" id="search-result" role="status" aria-live="polite">共 5 个工具站</p></section><section class="workflow"><div><span class="eyebrow">QUICK START</span><h2>从一件具体的小事开始</h2><div class="tasks"><a href="https://pdf.afeiii.com/zh/merge-pdf">把多份 PDF 合成一份<small>PDF 工具</small><span aria-hidden="true">↗</span></a><a href="https://convert.afeiii.com/">把图片转换成另一种格式<small>格式转换</small><span aria-hidden="true">↗</span></a><a href="https://tools.afeiii.com/json-prettify">整理一段 JSON 数据<small>开发工具箱</small><span aria-hidden="true">↗</span></a><a href="https://resume.afeiii.com/">从模板开始制作简历<small>在线简历</small><span aria-hidden="true">↗</span></a><a href="https://check.afeiii.com/">看看网站的证书和 DNS<small>网站检测</small><span aria-hidden="true">↗</span></a></div></div><aside class="privacy-box"><span class="eyebrow">YOUR FILES, YOUR CHOICE</span><h2>先了解处理方式，<br>再放心开始。</h2><p>PDF 工具与格式转换在浏览器中处理文件，首次使用需下载引擎。格式和大文件支持受浏览器与设备能力限制。</p><p>简历站提供账号与云端保存；网站检测会由服务器访问你输入的公开网址。不同工具的数据处理方式各有说明。</p><a href="/privacy/">了解各站的数据处理方式 →</a></aside></section></main>`;
+const home = `<main id="main" class="wrap"><section class="hero" aria-labelledby="hero-title"><div><span class="eyebrow">A SMALL TOOL FOR EVERYDAY WORK</span><h1 id="hero-title">把手头的事，<br><em>顺手做完。</em></h1><p>处理文件、整理文档、写好简历、检查网站。<br>五个实用工具站，从这里开始。</p><div class="hero-note"><span>开源项目构建</span><span>中文使用体验</span><span>清楚说明数据去向</span></div></div><div class="search-panel"><label for="tool-search">今天想完成什么？</label><div class="search-box"><span aria-hidden="true">⌕</span><input id="tool-search" type="search" placeholder="试试 PDF、图片、JSON、简历…" autocomplete="off" aria-controls="tool-list"><kbd aria-hidden="true">/</kbd></div><p class="search-help">正在找：<a href="https://pdf.afeiii.com/zh/merge-pdf">合并 PDF</a> · <a href="https://convert.afeiii.com/">图片转换</a> · <a href="https://tools.afeiii.com/json-prettify">JSON 格式化</a></p></div></section><section id="tools" aria-labelledby="tools-title"><div class="section-head"><div><h2 id="tools-title">选一个工具，开始处理</h2><p>按用途找入口，也可以直接搜索。</p></div><button class="text-button" id="clear-search">重置筛选</button></div><div class="filters" role="group" aria-label="按用途筛选"><button data-filter="all" aria-pressed="true">全部工具</button><button data-filter="documents" aria-pressed="false">PDF 文档</button><button data-filter="media" aria-pressed="false">图片与音视频</button><button data-filter="development" aria-pressed="false">开发与网站</button><button data-filter="career" aria-pressed="false">求职简历</button></div><div class="cards" id="tool-list">${cards}</div><p class="search-result" id="search-result" role="status" aria-live="polite">共 5 个工具站</p></section><section class="workflow"><div><span class="eyebrow">QUICK START</span><h2>从一件具体的小事开始</h2><div class="tasks"><a href="https://pdf.afeiii.com/zh/merge-pdf">把多份 PDF 合成一份<small>PDF 工具</small><span aria-hidden="true">↗</span></a><a href="https://convert.afeiii.com/">把图片转换成另一种格式<small>格式转换</small><span aria-hidden="true">↗</span></a><a href="https://tools.afeiii.com/json-prettify">整理一段 JSON 数据<small>开发工具箱</small><span aria-hidden="true">↗</span></a><a href="https://resume.afeiii.com/">从模板开始制作简历<small>在线简历</small><span aria-hidden="true">↗</span></a><a href="https://check.afeiii.com/">看看网站的证书和 DNS<small>网站检测</small><span aria-hidden="true">↗</span></a></div></div><aside class="privacy-box"><span class="eyebrow">YOUR FILES, YOUR CHOICE</span><h2>先了解处理方式，<br>再放心开始。</h2><p>PDF 工具与格式转换在浏览器中处理文件，首次使用需下载引擎。格式和大文件支持受浏览器与设备能力限制。</p><p>简历站提供账号与云端保存；网站检测会由服务器访问你输入的公开网址。不同工具的数据处理方式各有说明。</p><a href="/privacy/">了解各站的数据处理方式 →</a></aside></section>${guideHomeSection()}</main>`;
 const articles = {
   about: {
     title: "关于十三月",
@@ -178,6 +182,19 @@ for (const [key, a] of Object.entries(articles)) {
     ),
   );
 }
+await mkdir("dist/guides", { recursive: true });
+await writeFile(
+  "dist/guides/index.html",
+  page("使用指南", "图片格式转换、PDF 合并压缩、JSON 格式化的实际步骤、样例和常见问题。", "/guides/", guideIndex()),
+);
+for (const guide of guides) {
+  await mkdir(`dist/guides/${guide.slug}`, { recursive: true });
+  const image = { "image-format-conversion": "image-convert", "merge-compress-pdf": "pdf-merge", "json-formatting": "json-format" }[guide.slug];
+  await writeFile(
+    `dist/guides/${guide.slug}/index.html`,
+    page(guide.title, guide.description, guide.path, guideArticle(guide), false, { image, date: guide.date }),
+  );
+}
 await writeFile(
   "dist/404.html",
   page(
@@ -193,7 +210,7 @@ await writeFile(
 );
 await writeFile(
   "dist/sitemap.xml",
-  `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${["", "about/", "privacy/", "terms/"].map((p) => `<url><loc>${origin}/${p}</loc></url>`).join("")}</urlset>`,
+  `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${["", "about/", "privacy/", "terms/", "guides/", ...guides.map((g) => `guides/${g.slug}/`)].map((p) => `<url><loc>${origin}/${p}</loc></url>`).join("")}</urlset>`,
 );
 await mkdir("dist/.well-known", { recursive: true });
 await writeFile(
@@ -229,6 +246,6 @@ await writeFile(
   ),
 );
 console.log(
-  "Built portal: homepage, information pages, sitemap, security contact and version marker. Analytics:",
+  "Built portal: homepage, information pages, 3 guides and guide index, sitemap, security contact and version marker. Analytics:",
   token ? "enabled" : "not configured",
 );
