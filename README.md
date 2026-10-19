@@ -17,9 +17,9 @@ Oracle 仅提供静态资源：`/opt/apps/afeiii-portal/releases/<revision>`，`
 
 ## 访问统计
 
-已使用所有者提供的公开 beacon 标识启用六站统一基础统计；主站不使用统计 Cookie。可通过公开的 `CF_WEB_ANALYTICS_TOKEN`（32 位十六进制 beacon 标识，**不是 Cloudflare API Token**）后构建。生成页面会加入官方脚本，隐私页同步说明。没有标识时保持关闭，不用占位值伪装已接入。
+已使用所有者提供的公开 beacon 标识启用六站统一基础统计；主站不使用统计 Cookie。可通过公开的 `CF_WEB_ANALYTICS_TOKEN`（32 位十六进制 beacon 标识，**不是 Cloudflare API Token**）覆盖默认标识后构建。生成页面会加入官方脚本，隐私页同步说明。没有标识时保持关闭，不用占位值伪装已接入。
 
-Cloudflare 官方设置入口：账户级 Web Analytics → Add a site → Manage site → JS snippet。主域名标识可覆盖同一主域名下的子域名；橙云站通过 no-transform 禁止自动重复注入。简历与转换站仅在公开说明页直接加载，并禁用 SPA 路由跟踪。统计仅反映收到的浏览器访问事件，不能当作真实用户数或转换成功量。不能采集文件名、文件内容、搜索输入或个人简历。
+Cloudflare 官方设置入口：账户级 Web Analytics → Add a site → Manage site → JS snippet。主域名标识可覆盖同一主域名下的子域名。IT-Tools 与 BentoPDF 的 Pages 项目已在 Metrics → Web Analytics 关闭原自动注入，修改开关后须重新部署。`Cache-Control: no-transform` 仅防护边缘内容转换，不能替代 Pages 项目开关。简历与转换站仅在公开说明页直接加载，并禁用 SPA 路由跟踪。统计仅反映收到的浏览器访问事件，不能当作真实用户数或转换成功量。不能采集文件名、文件内容、搜索输入或个人简历。
 
 ## 维护
 
