@@ -85,6 +85,51 @@ export const guides = [
       ["注释为什么消失了？", "输入允许 JSON5，但输出通过 JSON 序列化生成，注释不会保留。只用于排版、需要完整保留注释的配置文件，应使用对应格式的编辑器。"],
     ])}</section><section class="guide-sources"><h2>参考与验证范围</h2><p>标准语法参考 <a href="https://www.rfc-editor.org/rfc/rfc8259">RFC 8259</a>；本站解析、排序与输出方式见<a href="https://github.com/bigzhihui/it-tools/blob/main/src/tools/json-viewer/json.models.ts">JSON 格式化实现</a>。本页以演示样例核对实时输出、无效输入提示和本地保存；大文件、所有 JSON5 扩展及业务规则不在本页验证范围。</p></section>`,
   },
+  {
+    slug: "resume-create-export",
+    title: "在线简历怎么制作并导出 PDF？从建档到分享",
+    shortTitle: "做好简历，检查后再投递",
+    category: "求职简历",
+    description: "了解十三月简历的账号保存、创建文档、内容编辑、模板排版、PDF 导出与分享设置，按清单检查中文、分页和联系方式。",
+    summary: "从账号和第一份简历开始，整理经历、调整版式，再检查下载与分享设置。",
+    tool: "十三月简历",
+    toolUrl: "https://resume.afeiii.com/",
+    contents: [["start", "创建第一份简历"], ["write", "填写与排版"], ["export", "导出与分享"], ["faq", "常见问题"]],
+    body: `
+<section id="start"><h2>先创建一份可继续编辑的简历</h2><p>准备好目标岗位、联系方式、教育与项目经历。第一次使用可以先用虚构内容熟悉编辑器，确认保存和导出正常后，再整理正式版本。</p><ol class="guide-steps"><li><strong>进入简历站。</strong>打开<a href="https://resume.afeiii.com/">十三月简历</a>，点击“建立你的简历”。尚未登录时会进入登录页面；已有账号可直接登录，新用户点击“现在就创建一个”。</li><li><strong>创建文档。</strong>登录后在文档管理中打开“新文件”，选择从空白简历开始。已有材料也可查看导入选项；导入后仍需逐项校对。</li><li><strong>命名并区分用途。</strong>为文档设置容易识别的名称，例如“前端开发—通用版”。针对不同职位修改时，保留一份通用版本，避免混淆投递内容。</li><li><strong>确认保存状态。</strong>编辑器会显示保存进度。准备离开页面前，确认状态已保存；若显示离线或未保存，先恢复网络、重试并核对内容。</li></ol>${figure("resume-start", "十三月简历公开首页，展示建立你的简历入口和产品演示", "正式首页的开始入口。页面中的人物与经历属于产品演示内容。")}<aside class="guide-note"><strong>简历保存在哪里？</strong><p>账号和保存的简历会存储在本站服务器，方便登录后继续编辑。请先了解<a href="https://resume.afeiii.com/privacy">简历站隐私说明</a>，根据实际用途填写必要信息。</p></aside></section>
+<section id="write"><h2>先把内容写清楚，再调整版式</h2><p>可以从联系方式、教育、工作或项目经历、技能这几部分开始。学生也可以用课程项目、实习和社团任务描述自己实际做过的工作。</p><h3>用具体动作和可核实的结果描述经历</h3><p>以下是虚构的写法示例，只演示表达结构：</p><pre><code>项目：课程资料整理工具
+职责：设计文件分类与搜索页面，编写使用说明
+做法：将资料按课程与日期整理，并邀请 5 位同学试用
+结果：根据反馈补充空结果提示和操作说明</code></pre><p>把“做了什么、如何完成、带来什么结果”说清楚。数字和项目事实应来自自己的经历；没有可靠统计时，用具体交付物描述结果。</p><ol><li>先在“撰写”区域补齐主要经历，统一日期和职位写法。</li><li>到“设计”区域选择模板，调整字体、颜色、字号和间距。</li><li>查看完整页面，处理标题与内容分离、末页只剩少量文字等分页问题。</li><li>再次检查姓名、邮箱、电话、作品链接及目标岗位，移除演示占位内容。</li></ol><p>优先保证正文可读。模板适配和自动检查可以辅助排版，接收方的要求仍需逐项确认。</p></section>
+<section id="export"><h2>导出 PDF 后，再检查一次</h2><p>编辑器提供“下载为 PDF 文档”入口；也可打开“分享和导出”的下载区域，选择 PDF。手机上的部分操作会显示为图标，可打开相应菜单查看。</p><ul><li><strong>打开实际下载文件：</strong>不要只看编辑预览，确认下载的 PDF 能正常打开。</li><li><strong>检查中文与分页：</strong>确认没有方块、问号、文字截断、意外空白页或错位。</li><li><strong>试着选择文字：</strong>如果接收方需要文本解析，确认姓名和正文能被选择、复制，检查阅读顺序。</li><li><strong>核对投递信息：</strong>检查联系方式、文件名和职位版本。对方要求 Word 等其他格式时，按其要求选择并单独检查排版。</li></ul><h3>下载文件与公开链接分别设置</h3><p>如果通过邮箱或招聘平台发送文件，可以保持在线简历私密。需要链接分享时，再到“分享”区域开启公共链接，按需要设置密码和访客下载权限，并用未登录窗口验证访问效果。</p>${figure("resume-share", "十三月简历公开首页中的分享与导出功能演示", "首页的分享功能演示。实际分享时，请使用自己编辑器生成的链接并核对可见性与下载权限。")}<p>关闭在线链接后，已经被接收方下载的文件仍由对方持有。分享前请检查正文、备注和链接中是否包含不打算公开的信息。</p></section>
+<section id="faq"><h2>常见问题</h2>${faq([
+      ["一定需要账号才能制作和保存简历吗？", "创建、保存和继续编辑自己的简历需要登录。首页的功能展示可以直接查看；若只是查看公开工具的说明，无需创建账号。"],
+      ["编辑后可以马上关闭页面吗？", "先看保存状态。显示已保存后再离开；离线或保存失败时，恢复网络并重试，必要时保留一份自己的内容备份。不同设备同步以服务器成功保存的版本为准。"],
+      ["导出的 PDF 中文异常或分页不合适怎么办？", "先尝试能覆盖所需中文的字体，并适当调整字号、间距和页面布局；等待字体资源加载后重新导出。打开新文件检查，避免继续投递旧版本。仍有问题可提供浏览器、操作步骤和脱敏截图反馈。"],
+      ["需要把简历设成公开才能下载 PDF 吗？", "自己的下载操作与链接分享是独立用途。可以保持私密并下载文件；需要给别人访问在线链接时，再确认公共链接、密码和下载权限的设置。"],
+    ])}</section><section class="guide-sources"><h2>继续了解</h2><p>账号、云端保存与公开分享的数据处理方式见<a href="https://resume.afeiii.com/privacy">简历站隐私说明</a>。本页展示公开页面与演示内容；自己的账号和正式简历应在登录后的编辑器中管理。</p></section>`,
+  },
+  {
+    slug: "website-check-report",
+    title: "网站检测报告怎么看？DNS、SSL、HTTP 与配置提醒",
+    shortTitle: "看懂网站检测，找到排查顺序",
+    category: "网站检测",
+    description: "用自有工具站演示公开网站检测，理解检测成功、配置提醒和跳过项，再按 DNS、证书、HTTP 与抓取规则逐步核对。",
+    summary: "从一个公开网址开始，读懂结果与配置提醒，安排下一步排查和复测。",
+    tool: "十三月网站检测",
+    toolUrl: "https://check.afeiii.com/",
+    contents: [["start", "开始检测"], ["read", "读懂结果"], ["order", "安排排查顺序"], ["faq", "常见问题"]],
+    body: `
+<section id="start"><h2>从一个你管理的公开网址开始</h2><p>打开<a href="https://check.afeiii.com/">十三月网站检测</a>，输入域名或完整 HTTP/HTTPS 网址，点击“开始检测”。例如，本页用自有工具站 <code>https://tools.afeiii.com/</code> 演示。</p><ol class="guide-steps"><li><strong>核对地址。</strong>确认拼写、子域名和协议正确。主站、www 和工具子域名可能有不同的记录与页面。</li><li><strong>等待结果。</strong>各项检测会陆续显示。通过“查看检测进度”了解成功、失败或跳过的项目。</li><li><strong>查看配置建议。</strong>展开“待核对项”“提醒”“参考信息”和“已通过”，再结合下方具体结果阅读。</li><li><strong>保存和复测。</strong>需要留档时点击“下载 JSON”；修改配置后，可单项重试或点击“重新检测当前网站”。</li></ol><aside class="guide-note"><strong>检测从哪里发出？</strong><p>网址会发送到检测服务器，由服务器查询 DNS、证书并访问公开网页。请使用你有权检测的公开地址，输入时避免带上登录令牌或其他秘密参数。内网和部分保留地址不在支持范围内。</p></aside></section>
+<section id="read"><h2>先区分进度状态与配置建议</h2><p>“检测成功”表示该项成功取得了数据；配置是否合适，需要继续查看建议与结果卡片。例如，成功取得 HTTP 响应头后，仍可能发现某个策略头尚未设置。</p><div class="guide-table"><table><caption>报告中几类常见提示</caption><thead><tr><th scope="col">提示</th><th scope="col">说明</th><th scope="col">接下来怎么做</th></tr></thead><tbody><tr><th scope="row">待核对项</th><td>值得进一步确认的配置或响应</td><td>打开对应卡片，结合实际业务检查</td></tr><tr><th scope="row">提醒</th><td>可能有优化空间，或需要按用途选择</td><td>确认适用条件，评估修改影响</td></tr><tr><th scope="row">参考信息</th><td>供了解公开配置与服务特征</td><td>按需记录，结合其他信息判断</td></tr><tr><th scope="row">已通过</th><td>符合当前检测规则的项目</td><td>保留配置，变更后再复测</td></tr><tr><th scope="row">跳过 / 失败</th><td>没有完成该项，或没有取得可用数据</td><td>查看具体原因，再决定是否重试</td></tr></tbody></table></div>${figure("website-report", "十三月网站检测对自有工具站展示检测进度、配置建议及结果卡片", "实际报告示例。检测时间、网络位置、缓存和网站配置会影响结果，数值以你本次查询为准。")}<p>缺少某个安全响应头通常需要按页面依赖和业务用途评估。以 Content-Security-Policy 为例，它控制页面能加载哪些资源；配置前要了解脚本、字体等来源，并在变更后检查页面功能。相关含义可参考 <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy">MDN 的 CSP 说明</a>。</p></section>
+<section id="order"><h2>按访问链路安排排查顺序</h2><ol class="guide-steps"><li><strong>先看 DNS。</strong>出现找不到域名或 <code>ENOTFOUND</code> 时，先核对输入拼写、域名状态与解析记录，再继续看网页内容。CDN 或代理的公网地址可能与源站 IP 不同。</li><li><strong>再看 SSL 证书。</strong>核对是否受信任、证书覆盖的域名和到期日期。子域名不匹配、证书过期等问题，需要在对应服务或代理层处理。</li><li><strong>查看 HTTP 状态和跳转。</strong>200 表示本次请求得到成功响应，还要查看是否是预期页面；HTTP 转 HTTPS、www 转主域名可能是有意设置的跳转。</li><li><strong>查看标题、canonical、robots 与 sitemap。</strong>确认网页描述和规范网址符合用途，抓取规则允许访问需要公开的页面，站点地图使用实际存在的地址。</li><li><strong>最后评估安全头和其他建议。</strong>按实际需要逐项修改、测试和复测。HSTS 的子域名或预加载选项等设置，需先确认整个相关范围都支持 HTTPS。</li></ol><p>允许抓取、能读取 sitemap，只说明提供了访问和发现入口。搜索引擎的实际收录与展示还需要在相应站长平台查看。<a href="https://developers.google.com/search/docs/crawling-indexing/robots/intro?hl=zh-cn">Google 的 robots.txt 说明</a>也区分了抓取控制与搜索结果处理。</p></section>
+<section id="faq"><h2>常见问题</h2>${faq([
+      ["我的浏览器能打开，为什么检测端失败？", "你的设备与检测服务器可能处在不同网络位置。DNS、访问限制、超时或站点防护都可能影响结果。记录网址、时间和失败项目，再结合服务日志或其他网络位置检查。"],
+      ["提醒很多，是否说明网站已经被入侵？", "报告基于公开响应和规则生成配置建议。确认入侵需要其他证据；本工具也不覆盖源码审计、登录后的权限或全部漏洞检查。先看每条说明，再按实际情况排查。"],
+      ["为什么修改后看到的记录还没变化？", "DNS、CDN、服务器和浏览器都可能有缓存。先确认配置保存到正确的域名与环境，再等待对应缓存更新并重新检测。保留前后结果，便于对照。"],
+      ["下载 JSON、在线查看和第三方工具有什么区别？", "下载 JSON 是把本次检测数据保存到本地；在线查看使用第三方 JSON Hero。下方工具卡片也会打开其他网站，部分会带入当前域名。选择外部服务前，请了解它的数据处理方式。"],
+    ])}</section><section class="guide-sources"><h2>继续排查</h2><p>可查看<a href="https://check.afeiii.com/faq">检测站使用说明</a>，或在自己的环境修改后再次检测。记录本次目标、检测时间、改动与复测结果，更容易确认问题发生在哪一步。</p></section>`,
+  },
 ].map((guide) => ({ ...guide, path: `/guides/${guide.slug}/`, date }));
 
 export function guideCards() {
@@ -96,7 +141,7 @@ export function guideHomeSection() {
 }
 
 export function guideIndex() {
-  return `<main id="main" class="wrap"><section class="guide-index"><nav class="breadcrumbs" aria-label="面包屑"><a href="/">首页</a><span aria-hidden="true">/</span><span aria-current="page">使用指南</span></nav><span class="eyebrow">一步一步，把事情做完</span><h1>使用指南</h1><p class="guide-intro">带着具体问题开始，用样例走完操作，最后检查输出。这里整理图片转换、PDF 处理和开发工具的使用方法。</p>${guideCards()}<aside class="guide-note"><strong>第一次使用，先试样例</strong><p>指南中的示例不含个人信息。各工具的数据处理方式不同，开始前可以先看<a href="/privacy/">隐私说明</a>，具体支持范围以对应工具页为准。</p></aside></section></main>`;
+  return `<main id="main" class="wrap"><section class="guide-index"><nav class="breadcrumbs" aria-label="面包屑"><a href="/">首页</a><span aria-hidden="true">/</span><span aria-current="page">使用指南</span></nav><span class="eyebrow">一步一步，把事情做完</span><h1>使用指南</h1><p class="guide-intro">带着具体问题开始，用样例走完操作，最后检查输出。这里整理图片转换、PDF 处理、开发工具、简历制作和网站检测的使用方法。</p>${guideCards()}<aside class="guide-note"><strong>第一次使用，先试样例</strong><p>指南中的示例不含个人信息。各工具的数据处理方式不同，开始前可以先看<a href="/privacy/">隐私说明</a>，具体支持范围以对应工具页为准。</p></aside></section></main>`;
 }
 
 export function guideArticle(g) {

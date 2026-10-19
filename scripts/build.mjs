@@ -185,11 +185,11 @@ for (const [key, a] of Object.entries(articles)) {
 await mkdir("dist/guides", { recursive: true });
 await writeFile(
   "dist/guides/index.html",
-  page("使用指南", "图片格式转换、PDF 合并压缩、JSON 格式化的实际步骤、样例和常见问题。", "/guides/", guideIndex()),
+  page("使用指南", "图片转换、PDF 处理、JSON 格式化、简历制作和网站检测的实际步骤与常见问题。", "/guides/", guideIndex()),
 );
 for (const guide of guides) {
   await mkdir(`dist/guides/${guide.slug}`, { recursive: true });
-  const image = { "image-format-conversion": "image-convert", "merge-compress-pdf": "pdf-merge", "json-formatting": "json-format" }[guide.slug];
+  const image = { "image-format-conversion": "image-convert", "merge-compress-pdf": "pdf-merge", "json-formatting": "json-format", "resume-create-export": "resume-start", "website-check-report": "website-report" }[guide.slug];
   await writeFile(
     `dist/guides/${guide.slug}/index.html`,
     page(guide.title, guide.description, guide.path, guideArticle(guide), false, { image, date: guide.date }),
@@ -246,6 +246,6 @@ await writeFile(
   ),
 );
 console.log(
-  "Built portal: homepage, information pages, 3 guides and guide index, sitemap, security contact and version marker. Analytics:",
+  `Built portal: homepage, information pages, ${guides.length} guides and guide index, sitemap, security contact and version marker. Analytics:`,
   token ? "enabled" : "not configured",
 );
