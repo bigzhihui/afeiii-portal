@@ -189,7 +189,7 @@ await writeFile(
 );
 for (const guide of guides) {
   await mkdir(`dist/guides/${guide.slug}`, { recursive: true });
-  const image = { "image-format-conversion": "image-convert", "merge-compress-pdf": "pdf-merge", "json-formatting": "json-format", "resume-create-export": "resume-start", "website-check-report": "website-report" }[guide.slug];
+  const image = { "image-format-conversion": "image-convert", "merge-compress-pdf": "pdf-merge", "json-formatting": "json-format", "resume-create-export": "resume-editor", "website-check-report": "website-report" }[guide.slug];
   await writeFile(
     `dist/guides/${guide.slug}/index.html`,
     page(guide.title, guide.description, guide.path, guideArticle(guide), false, { image, date: guide.date }),
