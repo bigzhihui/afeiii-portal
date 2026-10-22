@@ -77,6 +77,10 @@ const beacon = token
   ? `<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='${JSON.stringify({ token })}'></script>`
   : "";
 function page(title, description, path, body, script = false, article = null) {
+  body = body.replace(/<a\b[^>]*href="https:\/\/(?:pdf|tools|convert|resume|check)\.afeiii\.com(?:\/[^"\s]*)?"[^>]*>/g, (tag) => {
+    const clean = tag.replace(/\s(?:target|rel)="[^"]*"/g, "");
+    return `${clean.slice(0, -1)} target="_blank" rel="noopener noreferrer"${/\stitle=/.test(clean) ? "" : ' title="在新标签页打开"'}>`;
+  });
   const schema = article
     ? { "@context": "https://schema.org", "@type": "Article", headline: title, description, mainEntityOfPage: `${origin}${path}`, image: `${origin}/guides/images/${article.image}.jpg`, datePublished: article.date, dateModified: article.date, author: { "@type": "Organization", name: "十三月维护者", url: `${origin}/about/` }, publisher: { "@type": "Organization", name: "十三月", url: origin } }
     : { "@context": "https://schema.org", "@type": path === "/" ? "WebSite" : "WebPage", name: path === "/" ? "十三月" : title, url: `${origin}${path}`, description };
