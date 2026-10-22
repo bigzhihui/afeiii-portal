@@ -240,6 +240,7 @@ await writeFile(
     {
       name: "十三月主站",
       revision,
+      catalogEntries: catalog.entries.length,
       analytics: token ? "cloudflare-web-analytics" : "not-configured",
       builtAt: new Date().toISOString(),
     },
