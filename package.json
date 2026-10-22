@@ -2,5 +2,5 @@
   "name": "afeiii-portal",
   "private": true,
   "type": "module",
-  "scripts": { "build": "node scripts/build.mjs", "check": "node --check scripts/build.mjs && node --check scripts/guides.mjs && node --check public/app.js" }
+  "scripts": { "build": "node scripts/build.mjs", "catalog:sync": "node scripts/sync-catalog.mjs", "catalog:check": "node scripts/sync-catalog.mjs --check", "test": "node --test", "check": "node --check scripts/build.mjs && node --check scripts/guides.mjs && node --check scripts/sync-catalog.mjs && node --check public/app.js && node --test" }
 }

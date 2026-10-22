@@ -1,0 +1,66 @@
+.search-box input,
+.search-panel label,
+.catalog-controls button,
+.site-filter select {
+  font-size: 16px;
+}
+.search-local {
+  margin: 16px 0 0 !important;
+  font-size: 14px !important;
+  color: var(--muted);
+}
+.catalog-controls {
+  display: flex;
+  gap: 16px 24px;
+  align-items: start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.catalog-controls .filters { margin-bottom: 0; }
+.site-filter {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: var(--muted);
+  font-size: 14px;
+}
+.site-filter select,
+.catalog-more button {
+  font: inherit;
+  color: var(--green);
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 9px 12px;
+  min-height: 44px;
+}
+.site-filter select:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.catalog-count { font-size: 16px; color: var(--muted); margin: 20px 0; }
+.catalog-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.catalog-item {
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 20px;
+  background: white;
+  overflow-wrap: anywhere;
+}
+.catalog-item:hover { border-color: var(--green); background: #fbfcf8; }
+.catalog-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 12px; color: var(--green); font-size: 14px; }
+.catalog-item h3 { margin: 14px 0 8px; font-size: 18px; line-height: 1.5; }
+.catalog-item p { margin: 0; font-size: 16px; color: var(--muted); line-height: 1.7; }
+.catalog-more { text-align: center; margin-top: 24px; }
+.catalog-more button { padding-inline: 28px; }
+.catalog-empty { padding: 28px; border: 1px dashed var(--line); border-radius: 14px; font-size: 16px; }
+.site-directory { margin-top: 60px; padding-top: 36px; border-top: 1px solid var(--line); }
+@media (max-width: 1050px) { .catalog-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) {
+  .catalog-list { grid-template-columns: 1fr; }
+  .catalog-controls { gap: 16px; }
+  .site-filter { width: 100%; }
+  .site-filter select { flex: 1; min-width: 0; font-size: 16px; }
+  .catalog-item { padding: 20px; }
+  #tools .section-head h2 { font-size: 23px; }
+  #tools .section-head { flex-wrap: wrap; }
+  #tools .section-head p { font-size: 16px; }
+}

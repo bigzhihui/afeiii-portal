@@ -1,0 +1,4170 @@
+{
+  "version": 1,
+  "coverage": {
+    "tools": 93,
+    "pdf": 105,
+    "convert": 4,
+    "resume": 1,
+    "check": 26,
+    "guides": 5
+  },
+  "excludedPdf": [
+    "blog",
+    "excel-to-pdf",
+    "hyper-compress",
+    "kura",
+    "licensing",
+    "odg-to-pdf",
+    "odp-to-pdf",
+    "ods-to-pdf",
+    "odt-to-pdf",
+    "pages-to-pdf",
+    "powerpoint-to-pdf",
+    "pub-to-pdf",
+    "rtf-to-pdf",
+    "vsd-to-pdf",
+    "word-to-pdf",
+    "wpd-to-pdf",
+    "wps-to-pdf"
+  ],
+  "entries": [
+    {
+      "id": "tools:token-generator",
+      "site": "tools",
+      "category": "development",
+      "name": "Token 生成器",
+      "description": "使用您想要的字符、大写或小写字母、数字和/或符号生成随机字符串。",
+      "url": "https://tools.afeiii.com/token-generator",
+      "aliases": [
+        "Token generator",
+        "token generator",
+        "token",
+        "random",
+        "string",
+        "alphanumeric",
+        "symbols",
+        "number",
+        "letters",
+        "lowercase",
+        "uppercase",
+        "password"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:hash-text",
+      "site": "tools",
+      "category": "development",
+      "name": "Hash 文本",
+      "description": "使用所需的函数哈希文本字符串：MD5、SHA1、SHA256、SHA224、SHA512、SHA384、SHA3或RIPEMD160",
+      "url": "https://tools.afeiii.com/hash-text",
+      "aliases": [
+        "Hash text",
+        "hash text",
+        "hash",
+        "digest",
+        "crypto",
+        "security",
+        "text",
+        "MD5",
+        "SHA1",
+        "SHA256",
+        "SHA224",
+        "SHA512",
+        "SHA384",
+        "SHA3",
+        "RIPEMD160"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:bcrypt",
+      "site": "tools",
+      "category": "development",
+      "name": "Bcrypt 哈希与比对",
+      "description": "使用bcrypt对文本字符串进行哈希和比较。Bcrypt是一个基于Blowfish密码的密码哈希函数。",
+      "url": "https://tools.afeiii.com/bcrypt",
+      "aliases": [
+        "Bcrypt",
+        "bcrypt",
+        "hash",
+        "compare",
+        "password",
+        "salt",
+        "round",
+        "storage",
+        "crypto"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:uuid-generator",
+      "site": "tools",
+      "category": "development",
+      "name": "UUID 生成器",
+      "description": "通用唯一标识符（UUID）是一个128位数字，用于标识计算机系统中的信息。可能的UUID数量为16^32，即2^128或约3.4x10^38（这是一个很大的数字！）。",
+      "url": "https://tools.afeiii.com/uuid-generator",
+      "aliases": [
+        "UUIDs generator",
+        "uuid generator",
+        "uuid",
+        "v4",
+        "random",
+        "id",
+        "alphanumeric",
+        "identity",
+        "token",
+        "string",
+        "identifier",
+        "unique",
+        "v1",
+        "v3",
+        "v5",
+        "nil"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:ulid-generator",
+      "site": "tools",
+      "category": "development",
+      "name": "ULID 生成器",
+      "description": "生成随机的通用唯一词典可排序标识符（ULID）。",
+      "url": "https://tools.afeiii.com/ulid-generator",
+      "aliases": [
+        "ULID generator",
+        "ulid generator",
+        "ulid",
+        "generator",
+        "random",
+        "id",
+        "alphanumeric",
+        "identity",
+        "token",
+        "string",
+        "identifier",
+        "unique"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:encryption",
+      "site": "tools",
+      "category": "development",
+      "name": "文本对称加密/解密",
+      "description": "使用加密算法（如AES、TripleDES、Rabbit或RC4）加密和解密文本明文。",
+      "url": "https://tools.afeiii.com/encryption",
+      "aliases": [
+        "Encrypt / decrypt text",
+        "encryption",
+        "cypher",
+        "encipher",
+        "text",
+        "AES",
+        "TripleDES",
+        "Rabbit",
+        "RC4"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:bip39-generator",
+      "site": "tools",
+      "category": "development",
+      "name": "BIP39 助记词生成器",
+      "description": "从现有或随机助记符生成BIP39密码短语，或从密码短语获取助记符。",
+      "url": "https://tools.afeiii.com/bip39-generator",
+      "aliases": [
+        "BIP39 passphrase generator",
+        "bip39 generator",
+        "BIP39",
+        "passphrase",
+        "generator",
+        "mnemonic",
+        "entropy"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:hmac-generator",
+      "site": "tools",
+      "category": "development",
+      "name": "Hmac 生成器",
+      "description": "使用密钥和您喜欢的哈希函数计算基于哈希的消息身份验证代码（HMAC）。",
+      "url": "https://tools.afeiii.com/hmac-generator",
+      "aliases": [
+        "Hmac generator",
+        "hmac generator",
+        "hmac",
+        "generator",
+        "MD5",
+        "SHA1",
+        "SHA256",
+        "SHA224",
+        "SHA512",
+        "SHA384",
+        "SHA3",
+        "RIPEMD160"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:rsa-key-pair-generator",
+      "site": "tools",
+      "category": "development",
+      "name": "RSA 密钥对生成器",
+      "description": "生成新的随机RSA私钥和公钥pem证书。",
+      "url": "https://tools.afeiii.com/rsa-key-pair-generator",
+      "aliases": [
+        "RSA key pair generator",
+        "rsa key pair generator",
+        "rsa",
+        "key",
+        "pair",
+        "generator",
+        "public",
+        "private",
+        "secret",
+        "ssh",
+        "pem"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:password-strength-analyser",
+      "site": "tools",
+      "category": "development",
+      "name": "密码强度分析仪",
+      "description": "使用此密码强度分析器和破解时间估计工具来发现密码的强度。",
+      "url": "https://tools.afeiii.com/password-strength-analyser",
+      "aliases": [
+        "Password strength analyser",
+        "password strength analyser",
+        "password",
+        "strength",
+        "analyser",
+        "and",
+        "crack",
+        "time",
+        "estimation",
+        "brute",
+        "force",
+        "attack",
+        "entropy",
+        "cracking",
+        "hash",
+        "hashing",
+        "algorithm",
+        "algorithms",
+        "md5",
+        "sha1",
+        "sha256",
+        "sha512",
+        "bcrypt",
+        "scrypt",
+        "argon2",
+        "argon2id",
+        "argon2i",
+        "argon2d"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:pdf-signature-checker",
+      "site": "tools",
+      "category": "documents",
+      "name": "PDF签名检查器",
+      "description": "验证PDF文件的签名。签名的PDF文件包含一个或多个签名，可用于确定文件的内容在签名后是否已被更改。",
+      "url": "https://tools.afeiii.com/pdf-signature-checker",
+      "aliases": [
+        "PDF signature checker",
+        "pdf signature checker",
+        "pdf",
+        "signature",
+        "checker",
+        "verify",
+        "validate",
+        "sign"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:date-converter",
+      "site": "tools",
+      "category": "development",
+      "name": "日期时间转换器",
+      "description": "将日期和时间转换为各种不同的格式",
+      "url": "https://tools.afeiii.com/date-converter",
+      "aliases": [
+        "Date-time converter",
+        "date converter",
+        "date",
+        "time",
+        "converter",
+        "iso",
+        "utc",
+        "timezone",
+        "year",
+        "month",
+        "day",
+        "minute",
+        "seconde",
+        "时间戳",
+        "时间戳转换",
+        "Unix时间"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:base-converter",
+      "site": "tools",
+      "category": "development",
+      "name": "整数基转换器",
+      "description": "在不同的基数（十进制、十六进制、二进制、八进制、base64…）之间转换数字",
+      "url": "https://tools.afeiii.com/base-converter",
+      "aliases": [
+        "Integer base converter",
+        "base converter",
+        "integer",
+        "number",
+        "base",
+        "conversion",
+        "decimal",
+        "hexadecimal",
+        "binary",
+        "octal",
+        "base64"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:roman-numeral-converter",
+      "site": "tools",
+      "category": "development",
+      "name": "罗马数字转换器",
+      "description": "将罗马数字转换为数字，并将数字转换为罗马数字。",
+      "url": "https://tools.afeiii.com/roman-numeral-converter",
+      "aliases": [
+        "Roman numeral converter",
+        "roman numeral converter",
+        "roman",
+        "arabic",
+        "converter",
+        "X",
+        "I",
+        "V",
+        "L",
+        "C",
+        "D",
+        "M"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:base64-string-converter",
+      "site": "tools",
+      "category": "development",
+      "name": "Base64 字符串编码/解码",
+      "description": "将字符串编码和解码为其 Base64 格式表示形式即可。",
+      "url": "https://tools.afeiii.com/base64-string-converter",
+      "aliases": [
+        "Base64 string encoder/decoder",
+        "base64 string converter",
+        "base64",
+        "converter",
+        "conversion",
+        "web",
+        "data",
+        "format",
+        "atob",
+        "btoa",
+        "Base64编码",
+        "Base64解码"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:base64-file-converter",
+      "site": "tools",
+      "category": "development",
+      "name": "Base64 文件转换器",
+      "description": "将字符串、文件或图像转换为其 Base64 表示形式。",
+      "url": "https://tools.afeiii.com/base64-file-converter",
+      "aliases": [
+        "Base64 file converter",
+        "base64 file converter",
+        "base64",
+        "converter",
+        "upload",
+        "image",
+        "file",
+        "conversion",
+        "web",
+        "data",
+        "format"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:color-converter",
+      "site": "tools",
+      "category": "development",
+      "name": "颜色转换器",
+      "description": "在不同格式（十六进制、rgb、hsl和css名称）之间转换颜色",
+      "url": "https://tools.afeiii.com/color-converter",
+      "aliases": [
+        "Color converter",
+        "color converter",
+        "color",
+        "converter"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:case-converter",
+      "site": "tools",
+      "category": "development",
+      "name": "大小写转换",
+      "description": "更改字符串的大小写并在不同格式之间进行选择",
+      "url": "https://tools.afeiii.com/case-converter",
+      "aliases": [
+        "Case converter",
+        "case converter",
+        "case",
+        "converter",
+        "camelCase",
+        "capitalCase",
+        "constantCase",
+        "dotCase",
+        "headerCase",
+        "noCase",
+        "paramCase",
+        "pascalCase",
+        "pathCase",
+        "sentenceCase",
+        "snakeCase"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:text-to-nato-alphabet",
+      "site": "tools",
+      "category": "development",
+      "name": "文本转北约字母表",
+      "description": "将文本转换为北约拼音字母以进行口头传播。",
+      "url": "https://tools.afeiii.com/text-to-nato-alphabet",
+      "aliases": [
+        "Text to NATO alphabet",
+        "text to nato alphabet",
+        "string",
+        "nato",
+        "alphabet",
+        "phonetic",
+        "oral",
+        "transmission"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:text-to-binary",
+      "site": "tools",
+      "category": "development",
+      "name": "文本到 ASCII 二进制",
+      "description": "将文本转换为其 ASCII 二进制表示形式，反之亦然。",
+      "url": "https://tools.afeiii.com/text-to-binary",
+      "aliases": [
+        "Text to ASCII binary",
+        "text to binary",
+        "text",
+        "to",
+        "binary",
+        "converter",
+        "encode",
+        "decode",
+        "ascii"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:text-to-unicode",
+      "site": "tools",
+      "category": "development",
+      "name": "文本转 Unicode",
+      "description": "解析文本并将其转换为 unicode，反之亦然",
+      "url": "https://tools.afeiii.com/text-to-unicode",
+      "aliases": [
+        "Text to Unicode",
+        "text to unicode",
+        "text",
+        "to",
+        "unicode"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:yaml-to-json-converter",
+      "site": "tools",
+      "category": "development",
+      "name": "YAML到JSON转换器",
+      "description": "使用此在线转换器将YAML转换为JSON。",
+      "url": "https://tools.afeiii.com/yaml-to-json-converter",
+      "aliases": [
+        "YAML to JSON converter",
+        "yaml to json converter",
+        "yaml",
+        "to",
+        "json"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:yaml-to-toml",
+      "site": "tools",
+      "category": "development",
+      "name": "YAML 到 TOML",
+      "description": "解析YAML并将其转换为TOML。",
+      "url": "https://tools.afeiii.com/yaml-to-toml",
+      "aliases": [
+        "YAML to TOML",
+        "yaml to toml",
+        "yaml",
+        "to",
+        "toml",
+        "convert",
+        "transform"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:json-to-yaml-converter",
+      "site": "tools",
+      "category": "development",
+      "name": "JSON到YAML转换器",
+      "description": "在线转换将JSON转换为YAML。",
+      "url": "https://tools.afeiii.com/json-to-yaml-converter",
+      "aliases": [
+        "JSON to YAML converter",
+        "json to yaml converter",
+        "yaml",
+        "to",
+        "json"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:json-to-toml",
+      "site": "tools",
+      "category": "development",
+      "name": "JSON 转 TOML",
+      "description": "解析JSON并将其转换为TOML。",
+      "url": "https://tools.afeiii.com/json-to-toml",
+      "aliases": [
+        "JSON to TOML",
+        "json to toml",
+        "json",
+        "parse",
+        "toml",
+        "convert",
+        "transform"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:list-converter",
+      "site": "tools",
+      "category": "development",
+      "name": "List 转换器",
+      "description": "该工具可以处理基于数组的数据，并将各种更改（转置、添加前缀和后缀、反向列表、排序列表、小写值、截断值）应用于每一行。",
+      "url": "https://tools.afeiii.com/list-converter",
+      "aliases": [
+        "List converter",
+        "list converter",
+        "list",
+        "converter",
+        "sort",
+        "reverse",
+        "prefix",
+        "suffix",
+        "lowercase",
+        "truncate"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:toml-to-json",
+      "site": "tools",
+      "category": "development",
+      "name": "TOML 到 JSON",
+      "description": "解析TOML并将其转换为JSON。",
+      "url": "https://tools.afeiii.com/toml-to-json",
+      "aliases": [
+        "TOML to JSON",
+        "toml to json",
+        "toml",
+        "json",
+        "convert",
+        "online",
+        "transform",
+        "parser"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:toml-to-yaml",
+      "site": "tools",
+      "category": "development",
+      "name": "TOML 到 YAML",
+      "description": "Parse and convert TOML to YAML.",
+      "url": "https://tools.afeiii.com/toml-to-yaml",
+      "aliases": [
+        "TOML to YAML",
+        "toml to yaml",
+        "toml",
+        "yaml",
+        "convert",
+        "online",
+        "transform",
+        "parse"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:xml-to-json",
+      "site": "tools",
+      "category": "development",
+      "name": "XML 转 JSON",
+      "description": "解析 XML 并将其转换为 JSON 格式。",
+      "url": "https://tools.afeiii.com/xml-to-json",
+      "aliases": [
+        "XML to JSON",
+        "xml to json",
+        "xml",
+        "json"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:json-to-xml",
+      "site": "tools",
+      "category": "development",
+      "name": "JSON 转 XML",
+      "description": "解析 JSON 并将其转换为 XML 格式。",
+      "url": "https://tools.afeiii.com/json-to-xml",
+      "aliases": [
+        "JSON to XML",
+        "json to xml",
+        "json",
+        "xml"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:markdown-to-html",
+      "site": "tools",
+      "category": "development",
+      "name": "Markdown 转 HTML",
+      "description": "解析并转换 Markdown 文本为标准 HTML 代码，支持实时代码查看与直接打印为 PDF。",
+      "url": "https://tools.afeiii.com/markdown-to-html",
+      "aliases": [
+        "Markdown to HTML",
+        "markdown to html",
+        "markdown",
+        "html",
+        "converter",
+        "pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:url-encoder",
+      "site": "tools",
+      "category": "development",
+      "name": "编码/解码url格式的字符串",
+      "description": "编码为url编码格式（也称为“百分比编码”）或从中解码。",
+      "url": "https://tools.afeiii.com/url-encoder",
+      "aliases": [
+        "Encode/decode URL-formatted strings",
+        "url encoder",
+        "url",
+        "encode",
+        "decode",
+        "percent",
+        "%20",
+        "format",
+        "URL编码",
+        "URL解码",
+        "网址编码",
+        "网址解码"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:html-entities",
+      "site": "tools",
+      "category": "development",
+      "name": "HTML 实体转义/反转义",
+      "description": "转义或还原 HTML 实体（将 <、>、&、\" 和 \\' 替换为其对应的 HTML 实体编码，反之亦然）。",
+      "url": "https://tools.afeiii.com/html-entities",
+      "aliases": [
+        "Escape HTML entities",
+        "html entities",
+        "html",
+        "entities",
+        "escape",
+        "unescape",
+        "special",
+        "characters",
+        "tags"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:url-parser",
+      "site": "tools",
+      "category": "development",
+      "name": "URL 解析器",
+      "description": "解析 URL 字符串以分解出各组成部分（协议、来源、参数、端口、用户名、密码、路径等）。",
+      "url": "https://tools.afeiii.com/url-parser",
+      "aliases": [
+        "URL parser",
+        "url parser",
+        "url",
+        "parser",
+        "protocol",
+        "origin",
+        "params",
+        "port",
+        "username",
+        "password",
+        "href"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:device-information",
+      "site": "tools",
+      "category": "development",
+      "name": "设备与环境信息",
+      "description": "获取当前设备与浏览器的软硬件信息（屏幕分辨率、像素比、User Agent、平台等）。",
+      "url": "https://tools.afeiii.com/device-information",
+      "aliases": [
+        "Device information",
+        "device information",
+        "device",
+        "information",
+        "screen",
+        "pixel",
+        "ratio",
+        "status",
+        "data",
+        "computer",
+        "size",
+        "user",
+        "agent"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:basic-auth-generator",
+      "site": "tools",
+      "category": "development",
+      "name": "Basic Auth 生成器",
+      "description": "通过用户名和密码生成标准的 HTTP Basic Auth 认证请求头。",
+      "url": "https://tools.afeiii.com/basic-auth-generator",
+      "aliases": [
+        "Basic auth generator",
+        "basic auth generator",
+        "basic",
+        "auth",
+        "generator",
+        "username",
+        "password",
+        "base64",
+        "authentication",
+        "header",
+        "authorization"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:og-meta-generator",
+      "site": "tools",
+      "category": "development",
+      "name": "Open Graph 元标签生成器",
+      "description": "为您的网站生成标准的 Open Graph (OG) 和社交分享 HTML meta 标签。",
+      "url": "https://tools.afeiii.com/og-meta-generator",
+      "aliases": [
+        "Open graph meta generator",
+        "og meta generator",
+        "meta",
+        "tag",
+        "generator",
+        "social",
+        "title",
+        "description",
+        "image",
+        "share",
+        "online",
+        "website",
+        "open",
+        "graph",
+        "og"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:otp-generator",
+      "site": "tools",
+      "category": "development",
+      "name": "OTP 动态口令生成器",
+      "description": "为多因素身份验证 (MFA) 生成和验证基于时间的 TOTP 一次性动态密码。",
+      "url": "https://tools.afeiii.com/otp-generator",
+      "aliases": [
+        "OTP code generator",
+        "otp generator",
+        "otp",
+        "code",
+        "generator",
+        "validator",
+        "one",
+        "time",
+        "password",
+        "authentication",
+        "MFA",
+        "mobile",
+        "device",
+        "security",
+        "TOTP",
+        "Time",
+        "HMAC"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:mime-types",
+      "site": "tools",
+      "category": "development",
+      "name": "MIME 类型查询与转换",
+      "description": "查询 MIME 类型对应的文件后缀，或通过文件后缀查询对应的 MIME 类型。",
+      "url": "https://tools.afeiii.com/mime-types",
+      "aliases": [
+        "MIME types",
+        "mime types",
+        "mime",
+        "types",
+        "extension",
+        "content",
+        "type"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:jwt-parser",
+      "site": "tools",
+      "category": "development",
+      "name": "JWT 解析器",
+      "description": "解析和解码JSON Web Token（jwt）并显示其内容。",
+      "url": "https://tools.afeiii.com/jwt-parser",
+      "aliases": [
+        "JWT parser",
+        "jwt parser",
+        "jwt",
+        "parser",
+        "decode",
+        "typ",
+        "alg",
+        "iss",
+        "sub",
+        "aud",
+        "exp",
+        "nbf",
+        "iat",
+        "jti",
+        "json",
+        "web",
+        "token"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:keycode-info",
+      "site": "tools",
+      "category": "development",
+      "name": "键盘按键信息 (Keycode)",
+      "description": "获取任意键盘按键的 JavaScript key、keycode、物理代码 (code)、位置及修饰键信息。",
+      "url": "https://tools.afeiii.com/keycode-info",
+      "aliases": [
+        "Keycode info",
+        "keycode info",
+        "keycode",
+        "info",
+        "code",
+        "javascript",
+        "event",
+        "keycodes",
+        "which",
+        "keyboard",
+        "press",
+        "modifier",
+        "alt",
+        "ctrl",
+        "meta",
+        "shift"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:slugify-string",
+      "site": "tools",
+      "category": "development",
+      "name": "字符串 Slug 别名转换",
+      "description": "将字符串转换为安全友好的 URL/文件名 Slug（去除特殊符号，以连字符分隔）。",
+      "url": "https://tools.afeiii.com/slugify-string",
+      "aliases": [
+        "Slugify string",
+        "slugify string",
+        "slugify",
+        "string",
+        "escape",
+        "emoji",
+        "special",
+        "character",
+        "space",
+        "trim"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:html-wysiwyg-editor",
+      "site": "tools",
+      "category": "development",
+      "name": "HTML 所见即所得富文本编辑器",
+      "description": "功能丰富的在线所见即所得 HTML 富文本编辑器，实时生成格式化 HTML 源代码。",
+      "url": "https://tools.afeiii.com/html-wysiwyg-editor",
+      "aliases": [
+        "HTML WYSIWYG editor",
+        "html wysiwyg editor",
+        "html",
+        "wysiwyg",
+        "editor",
+        "p",
+        "ul",
+        "ol",
+        "converter",
+        "live"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:user-agent-parser",
+      "site": "tools",
+      "category": "development",
+      "name": "User Agent 用户代理分析器",
+      "description": "解析浏览器 User Agent 字符串，精准识别浏览器、渲染引擎、操作系统、CPU架构及设备型号。",
+      "url": "https://tools.afeiii.com/user-agent-parser",
+      "aliases": [
+        "User-agent parser",
+        "user agent parser",
+        "user",
+        "agent",
+        "parser",
+        "browser",
+        "engine",
+        "os",
+        "cpu",
+        "device",
+        "user-agent",
+        "client"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:http-status-codes",
+      "site": "tools",
+      "category": "development",
+      "name": "HTTP 状态码大全",
+      "description": "完整的 HTTP 响应状态码列表及其官方含义、规范与应用场景说明。",
+      "url": "https://tools.afeiii.com/http-status-codes",
+      "aliases": [
+        "HTTP status codes",
+        "http status codes",
+        "http",
+        "status",
+        "codes"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:json-diff",
+      "site": "tools",
+      "category": "development",
+      "name": "JSON 差异对比",
+      "description": "比较两个 JSON 对象的差异并结构化高亮显示其增删改变动。",
+      "url": "https://tools.afeiii.com/json-diff",
+      "aliases": [
+        "JSON diff",
+        "json diff",
+        "json",
+        "diff",
+        "compare",
+        "difference",
+        "object",
+        "data",
+        "JSON对比",
+        "比较JSON",
+        "JSON比较",
+        "比较两份JSON"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:safelink-decoder",
+      "site": "tools",
+      "category": "development",
+      "name": "Outlook SafeLink 解码器",
+      "description": "将微软 Outlook SafeLink 安全跳转链接解码还原为原始目标 URL。",
+      "url": "https://tools.afeiii.com/safelink-decoder",
+      "aliases": [
+        "Safelink decoder",
+        "safelink decoder",
+        "outlook",
+        "safelink",
+        "decoder"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:qrcode-generator",
+      "site": "tools",
+      "category": "development",
+      "name": "二维码生成器",
+      "description": "生成并下载url或文本的QR代码，并自定义背景和前景颜色。",
+      "url": "https://tools.afeiii.com/qrcode-generator",
+      "aliases": [
+        "QR Code generator",
+        "qrcode generator",
+        "qr",
+        "code",
+        "generator",
+        "square",
+        "color",
+        "link",
+        "low",
+        "medium",
+        "quartile",
+        "high",
+        "transparent"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:wifi-qrcode-generator",
+      "site": "tools",
+      "category": "development",
+      "name": "WiFi 二维码生成器",
+      "description": "生成和下载QR码以快速连接到WiFi网络。",
+      "url": "https://tools.afeiii.com/wifi-qrcode-generator",
+      "aliases": [
+        "WiFi QR Code generator",
+        "wifi qrcode generator",
+        "qr",
+        "code",
+        "generator",
+        "square",
+        "color",
+        "link",
+        "low",
+        "medium",
+        "quartile",
+        "high",
+        "transparent",
+        "wifi"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:svg-placeholder-generator",
+      "site": "tools",
+      "category": "media",
+      "name": "SVG 占位符生成器",
+      "description": "生成 svg 图像以用作应用程序中的占位符。",
+      "url": "https://tools.afeiii.com/svg-placeholder-generator",
+      "aliases": [
+        "SVG placeholder generator",
+        "svg placeholder generator",
+        "svg",
+        "placeholder",
+        "generator",
+        "image",
+        "size",
+        "mockup"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:camera-recorder",
+      "site": "tools",
+      "category": "media",
+      "name": "摄像机记录器",
+      "description": "从网络摄像头或照相机拍摄照片或录制视频。",
+      "url": "https://tools.afeiii.com/camera-recorder",
+      "aliases": [
+        "Camera recorder",
+        "camera recorder",
+        "camera",
+        "recoder"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:pdf-merge",
+      "site": "tools",
+      "category": "documents",
+      "name": "PDF 合并",
+      "description": "把多个 PDF 文件按指定顺序合并成一个，全部在浏览器本地完成，文件不会上传。",
+      "url": "https://tools.afeiii.com/pdf-merge",
+      "aliases": [
+        "Merge PDF",
+        "pdf merge",
+        "pdf",
+        "merge",
+        "combine",
+        "join",
+        "concat",
+        "append",
+        "合并",
+        "拼接",
+        "组合"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:pdf-extract-pages",
+      "site": "tools",
+      "category": "documents",
+      "name": "PDF 提取与删除页面",
+      "description": "按页码提取需要的页面，或删除不需要的页面，生成新的 PDF。全部在浏览器本地完成，文件不会上传。",
+      "url": "https://tools.afeiii.com/pdf-extract-pages",
+      "aliases": [
+        "Extract or delete PDF pages",
+        "pdf extract pages",
+        "pdf",
+        "extract",
+        "delete",
+        "remove",
+        "split",
+        "pages",
+        "select",
+        "提取",
+        "删除",
+        "拆分",
+        "分割",
+        "页面"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:pdf-rotate",
+      "site": "tools",
+      "category": "documents",
+      "name": "PDF 旋转",
+      "description": "把 PDF 中方向不对的页面转正，可以旋转全部页面或指定页面。全部在浏览器本地完成，文件不会上传。",
+      "url": "https://tools.afeiii.com/pdf-rotate",
+      "aliases": [
+        "Rotate PDF",
+        "pdf rotate",
+        "pdf",
+        "rotate",
+        "turn",
+        "orientation",
+        "landscape",
+        "portrait",
+        "upside down",
+        "旋转",
+        "方向",
+        "横向",
+        "纵向",
+        "转正",
+        "倒置"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:image-to-pdf",
+      "site": "tools",
+      "category": "documents",
+      "name": "图片转 PDF",
+      "description": "把 JPG、PNG 等图片按顺序合成一个 PDF，每张图片一页，可选与图片同尺寸或 A4。全部在浏览器本地完成，图片不会上传。",
+      "url": "https://tools.afeiii.com/image-to-pdf",
+      "aliases": [
+        "Image to PDF",
+        "image to pdf",
+        "image",
+        "picture",
+        "photo",
+        "jpg",
+        "jpeg",
+        "png",
+        "webp",
+        "pdf",
+        "convert",
+        "scan",
+        "图片",
+        "照片",
+        "转换",
+        "转PDF",
+        "扫描件",
+        "合成"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:pdf-to-image",
+      "site": "tools",
+      "category": "documents",
+      "name": "PDF 转图片",
+      "description": "把 PDF 的页面转换为 JPG 或 PNG 图片，可选分辨率和页码。全部在浏览器本地完成，文件不会上传。",
+      "url": "https://tools.afeiii.com/pdf-to-image",
+      "aliases": [
+        "PDF to image",
+        "pdf to image",
+        "pdf",
+        "image",
+        "picture",
+        "jpg",
+        "jpeg",
+        "png",
+        "convert",
+        "export",
+        "render",
+        "page",
+        "图片",
+        "转换",
+        "转图片",
+        "转JPG",
+        "导出",
+        "截图"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:pdf-translate",
+      "site": "tools",
+      "category": "documents",
+      "name": "PDF 翻译",
+      "description": "借助开源项目 PDFMathTranslate 的在线服务翻译论文等 PDF，保留公式、图表和排版。由第三方提供，文件会上传到对方服务器。",
+      "url": "https://tools.afeiii.com/pdf-translate",
+      "aliases": [
+        "PDF translation",
+        "pdf translate",
+        "pdf",
+        "translate",
+        "translation",
+        "paper",
+        "bilingual",
+        "pdf2zh",
+        "PDFMathTranslate",
+        "翻译",
+        "论文",
+        "文献",
+        "双语",
+        "对照"
+      ],
+      "kind": "external"
+    },
+    {
+      "id": "tools:more-pdf-tools",
+      "site": "tools",
+      "category": "documents",
+      "name": "更多 PDF 工具",
+      "description": "姊妹站十三月 PDF 工具：PDF 转 Word、Excel，文字识别，压缩、编辑、签名、加水印等上百个工具，同样在浏览器本地处理，文件不会上传。",
+      "url": "https://tools.afeiii.com/more-pdf-tools",
+      "aliases": [
+        "More PDF tools",
+        "more pdf tools",
+        "pdf",
+        "bentopdf",
+        "word",
+        "excel",
+        "ocr",
+        "compress",
+        "edit",
+        "sign",
+        "watermark",
+        "convert",
+        "转换",
+        "转 Word",
+        "转 Excel",
+        "文字识别",
+        "压缩",
+        "编辑",
+        "签名",
+        "水印",
+        "加密"
+      ],
+      "kind": "directory"
+    },
+    {
+      "id": "tools:git-memo",
+      "site": "tools",
+      "category": "development",
+      "name": "Git 备忘录",
+      "description": "Git是一种去中心化的版本管理软件。使用此备忘单，您可以快速访问最常见的git命令.",
+      "url": "https://tools.afeiii.com/git-memo",
+      "aliases": [
+        "Git cheatsheet",
+        "git memo",
+        "git",
+        "push",
+        "force",
+        "pull",
+        "commit",
+        "amend",
+        "rebase",
+        "merge",
+        "reset",
+        "soft",
+        "hard",
+        "lease"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:random-port-generator",
+      "site": "tools",
+      "category": "development",
+      "name": "随机端口生成",
+      "description": "生成“已知”端口范围（0-1023）之外的随机端口号。",
+      "url": "https://tools.afeiii.com/random-port-generator",
+      "aliases": [
+        "Random port generator",
+        "random port generator",
+        "system",
+        "port",
+        "lan",
+        "generator",
+        "random",
+        "development",
+        "computer"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:crontab-generator",
+      "site": "tools",
+      "category": "development",
+      "name": "Crontab 表达式生成器",
+      "description": "验证并生成 crontab 表达式，并获取 cron 定时周期的中文可读描述。",
+      "url": "https://tools.afeiii.com/crontab-generator",
+      "aliases": [
+        "Crontab generator",
+        "crontab generator",
+        "crontab",
+        "generator",
+        "cronjob",
+        "cron",
+        "schedule",
+        "parse",
+        "expression",
+        "year",
+        "month",
+        "week",
+        "day",
+        "minute",
+        "second"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:json-prettify",
+      "site": "tools",
+      "category": "development",
+      "name": "JSON 美化与格式化",
+      "description": "将 JSON 字符串格式化为结构清晰、易于阅读的优美格式。",
+      "url": "https://tools.afeiii.com/json-prettify",
+      "aliases": [
+        "JSON prettify and format",
+        "json prettify",
+        "json",
+        "viewer",
+        "prettify",
+        "format",
+        "格式化JSON",
+        "JSON格式化",
+        "JSON美化",
+        "整理JSON",
+        "json format"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:json-minify",
+      "site": "tools",
+      "category": "development",
+      "name": "JSON 压缩",
+      "description": "通过删除不必要的空白来缩小和压缩JSON。",
+      "url": "https://tools.afeiii.com/json-minify",
+      "aliases": [
+        "JSON minify",
+        "json minify",
+        "json",
+        "minify",
+        "format"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:json-to-csv",
+      "site": "tools",
+      "category": "development",
+      "name": "JSON 转 CSV",
+      "description": "使用自动标头检测将JSON转换为CSV。",
+      "url": "https://tools.afeiii.com/json-to-csv",
+      "aliases": [
+        "JSON to CSV",
+        "json to csv",
+        "json",
+        "to",
+        "csv",
+        "convert"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:sql-prettify",
+      "site": "tools",
+      "category": "development",
+      "name": "SQL 美化和格式化",
+      "description": "在线格式化和美化您的 SQL 查询（它支持各种 SQL 方言）。",
+      "url": "https://tools.afeiii.com/sql-prettify",
+      "aliases": [
+        "SQL prettify and format",
+        "sql prettify",
+        "sql",
+        "prettify",
+        "beautify",
+        "GCP BigQuery",
+        "IBM DB2",
+        "Apache Hive",
+        "MariaDB",
+        "MySQL",
+        "Couchbase N1QL",
+        "Oracle PL/SQL",
+        "PostgreSQL",
+        "Amazon Redshift",
+        "Spark",
+        "SQL Server Transact-SQL"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:chmod-calculator",
+      "site": "tools",
+      "category": "development",
+      "name": "Chmod 计算器",
+      "description": "使用此在线的chmod计算器计算chmod权限和命令。",
+      "url": "https://tools.afeiii.com/chmod-calculator",
+      "aliases": [
+        "Chmod calculator",
+        "chmod calculator",
+        "chmod",
+        "calculator",
+        "file",
+        "permission",
+        "files",
+        "directory",
+        "folder",
+        "recursive",
+        "generator",
+        "octal"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:docker-run-to-docker-compose-converter",
+      "site": "tools",
+      "category": "development",
+      "name": "Docker Run 到 docker-compose 转换器",
+      "description": "将 docker run 命令行转换为 docker-compose 文件!",
+      "url": "https://tools.afeiii.com/docker-run-to-docker-compose-converter",
+      "aliases": [
+        "Docker run to Docker compose converter",
+        "docker run to docker compose converter",
+        "docker",
+        "run",
+        "compose",
+        "yaml",
+        "yml",
+        "convert",
+        "deamon"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:xml-formatter",
+      "site": "tools",
+      "category": "development",
+      "name": "XML 格式化",
+      "description": "将XML字符串修饰为友好的可读格式。",
+      "url": "https://tools.afeiii.com/xml-formatter",
+      "aliases": [
+        "XML formatter",
+        "xml formatter",
+        "xml",
+        "prettify",
+        "format"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:yaml-prettify",
+      "site": "tools",
+      "category": "development",
+      "name": "YAML美化和格式化",
+      "description": "将YAML字符串修饰为友好的可读格式。",
+      "url": "https://tools.afeiii.com/yaml-prettify",
+      "aliases": [
+        "YAML prettify and format",
+        "yaml prettify",
+        "yaml",
+        "viewer",
+        "prettify",
+        "format"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:email-normalizer",
+      "site": "tools",
+      "category": "development",
+      "name": "邮箱地址规范化 (Email Normalizer)",
+      "description": "将电子邮件地址统一格式化为标准格式（去除别名点号、小写等），便于去重和数据清洗。",
+      "url": "https://tools.afeiii.com/email-normalizer",
+      "aliases": [
+        "Email normalizer",
+        "email normalizer",
+        "email",
+        "normalizer"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:regex-tester",
+      "site": "tools",
+      "category": "development",
+      "name": "正则表达式测试器 (Regex Tester)",
+      "description": "使用测试文本实时测试、分析与可视化您的正则表达式。",
+      "url": "https://tools.afeiii.com/regex-tester",
+      "aliases": [
+        "Regex Tester",
+        "regex tester",
+        "regex",
+        "tester",
+        "sample",
+        "expression"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:regex-memo",
+      "site": "tools",
+      "category": "development",
+      "name": "正则表达式速查备忘录 (Regex Cheatsheet)",
+      "description": "JavaScript 常用正则表达式语法、字符集、量词、边界与零宽断言速查备忘录。",
+      "url": "https://tools.afeiii.com/regex-memo",
+      "aliases": [
+        "Regex cheatsheet",
+        "regex memo",
+        "regex",
+        "regular",
+        "expression",
+        "javascript",
+        "memo",
+        "cheatsheet"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:ipv4-subnet-calculator",
+      "site": "tools",
+      "category": "development",
+      "name": "IPv4 子网掩码计算器",
+      "description": "解析 IPv4 CIDR 网段块，计算子网掩码、网络地址、可用主机范围、广播地址及网络分类。",
+      "url": "https://tools.afeiii.com/ipv4-subnet-calculator",
+      "aliases": [
+        "IPv4 subnet calculator",
+        "ipv4 subnet calculator",
+        "ipv4",
+        "subnet",
+        "calculator",
+        "mask",
+        "network",
+        "cidr",
+        "netmask",
+        "bitmask",
+        "broadcast",
+        "address"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:ipv4-address-converter",
+      "site": "tools",
+      "category": "development",
+      "name": "IPv4 地址格式转换器",
+      "description": "将 IPv4 地址实时转换为十进制整数、二进制、十六进制及 IPv6 映射/兼容格式。",
+      "url": "https://tools.afeiii.com/ipv4-address-converter",
+      "aliases": [
+        "IPv4 address converter",
+        "ipv4 address converter",
+        "ipv4",
+        "address",
+        "converter",
+        "decimal",
+        "hexadecimal",
+        "binary",
+        "ipv6"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:ipv4-range-expander",
+      "site": "tools",
+      "category": "development",
+      "name": "IPv4 地址范围扩展与 CIDR 计算器",
+      "description": "给定起始与结束 IPv4 地址范围，自动将其对齐并计算能够完全覆盖该区间的最小有效 CIDR 子网。",
+      "url": "https://tools.afeiii.com/ipv4-range-expander",
+      "aliases": [
+        "IPv4 range expander",
+        "ipv4 range expander",
+        "ipv4",
+        "range",
+        "expander",
+        "subnet",
+        "creator",
+        "cidr"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:mac-address-lookup",
+      "site": "tools",
+      "category": "development",
+      "name": "MAC 地址查询 (OUI Lookup)",
+      "description": "通过网卡物理 MAC 地址查询设备的供应商和制造商信息。",
+      "url": "https://tools.afeiii.com/mac-address-lookup",
+      "aliases": [
+        "MAC address lookup",
+        "mac address lookup",
+        "mac",
+        "address",
+        "lookup",
+        "vendor",
+        "parser",
+        "manufacturer"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:mac-address-generator",
+      "site": "tools",
+      "category": "development",
+      "name": "MAC 地址生成器",
+      "description": "支持自定义生成数量、OUI 前缀、字母大小写与分隔符，批量随机生成网卡物理 MAC 地址。",
+      "url": "https://tools.afeiii.com/mac-address-generator",
+      "aliases": [
+        "MAC address generator",
+        "mac address generator",
+        "mac",
+        "address",
+        "generator",
+        "random",
+        "prefix"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:ipv6-ula-generator",
+      "site": "tools",
+      "category": "development",
+      "name": "IPv6 ULA 本地唯一地址生成器",
+      "description": "遵循 RFC 4193 标准规范，基于时间戳与 MAC 地址生成局域网不可公网路由的 IPv6 唯一本地地址 (ULA)。",
+      "url": "https://tools.afeiii.com/ipv6-ula-generator",
+      "aliases": [
+        "IPv6 ULA generator",
+        "ipv6 ula generator",
+        "ipv6",
+        "ula",
+        "generator",
+        "rfc4193",
+        "network",
+        "private"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:math-evaluator",
+      "site": "tools",
+      "category": "development",
+      "name": "数学表达式求值计算器 (Math Evaluator)",
+      "description": "强大的数学表达式求解计算器，支持各类高级数学运算函数（如 sqrt、cos、sin、abs 等）。",
+      "url": "https://tools.afeiii.com/math-evaluator",
+      "aliases": [
+        "Math evaluator",
+        "math evaluator",
+        "math",
+        "evaluator",
+        "calculator",
+        "expression",
+        "abs",
+        "acos",
+        "acosh",
+        "acot",
+        "acoth",
+        "acsc",
+        "acsch",
+        "asec",
+        "asech",
+        "asin",
+        "asinh",
+        "atan",
+        "atan2",
+        "atanh",
+        "cos",
+        "cosh",
+        "cot",
+        "coth",
+        "csc",
+        "csch",
+        "sec",
+        "sech",
+        "sin",
+        "sinh",
+        "sqrt",
+        "tan",
+        "tanh"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:eta-calculator",
+      "site": "tools",
+      "category": "development",
+      "name": "预估完成时间计算器 (ETA Calculator)",
+      "description": "根据当前处理速率与待处理总量，精确推算任务预计完成时间 (ETA) 与剩余总耗时。",
+      "url": "https://tools.afeiii.com/eta-calculator",
+      "aliases": [
+        "ETA calculator",
+        "eta calculator",
+        "eta",
+        "calculator",
+        "estimated",
+        "time",
+        "arrival",
+        "average"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:percentage-calculator",
+      "site": "tools",
+      "category": "development",
+      "name": "百分比计算器 (Percentage Calculator)",
+      "description": "轻松进行三种常见百分比运算：求数值的百分比、计算数值占比百分比、计算增减百分比。",
+      "url": "https://tools.afeiii.com/percentage-calculator",
+      "aliases": [
+        "Percentage calculator",
+        "percentage calculator",
+        "percentage",
+        "calculator",
+        "calculate",
+        "value",
+        "number",
+        "%"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:chronometer",
+      "site": "tools",
+      "category": "development",
+      "name": "秒表与计时器 (Chronometer)",
+      "description": "毫秒级高精度秒表计时器，支持开始、暂停与复位重置。",
+      "url": "https://tools.afeiii.com/chronometer",
+      "aliases": [
+        "Chronometer",
+        "chronometer",
+        "time",
+        "lap",
+        "duration",
+        "measure",
+        "pause",
+        "resume",
+        "stopwatch"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:temperature-converter",
+      "site": "tools",
+      "category": "development",
+      "name": "温度转换器 (Temperature Converter)",
+      "description": "开尔文、摄氏度、华氏度、兰金、德莱尔、牛顿、列氏度与罗氏度多单位双向实时温度转换。",
+      "url": "https://tools.afeiii.com/temperature-converter",
+      "aliases": [
+        "Temperature converter",
+        "temperature converter",
+        "temperature",
+        "converter",
+        "degree",
+        "Kelvin",
+        "Celsius",
+        "Fahrenheit",
+        "Rankine",
+        "Delisle",
+        "Newton",
+        "Réaumur",
+        "Rømer"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:benchmark-builder",
+      "site": "tools",
+      "category": "development",
+      "name": "简单基准测试生成器 (Benchmark Builder)",
+      "description": "快速记录与对比多组任务或算法的执行时间数据，自动计算平均值、方差及性能倍率差异。",
+      "url": "https://tools.afeiii.com/benchmark-builder",
+      "aliases": [
+        "Benchmark builder",
+        "benchmark builder",
+        "benchmark",
+        "builder",
+        "execution",
+        "duration",
+        "mean",
+        "variance"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:lorem-ipsum-generator",
+      "site": "tools",
+      "category": "development",
+      "name": "Lorem ipsum生成器",
+      "description": "Lorem ipsum是一种占位符文本，通常用于演示文档或字体的视觉形式，而不依赖于有意义的内容",
+      "url": "https://tools.afeiii.com/lorem-ipsum-generator",
+      "aliases": [
+        "Lorem ipsum generator",
+        "lorem ipsum generator",
+        "lorem",
+        "ipsum",
+        "dolor",
+        "sit",
+        "amet",
+        "placeholder",
+        "text",
+        "filler",
+        "random",
+        "generator"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:text-statistics",
+      "site": "tools",
+      "category": "development",
+      "name": "文本统计",
+      "description": "获取有关文本、字符数、字数、大小等的信息",
+      "url": "https://tools.afeiii.com/text-statistics",
+      "aliases": [
+        "Text statistics",
+        "text statistics",
+        "text",
+        "statistics",
+        "length",
+        "characters",
+        "count",
+        "size",
+        "bytes"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:emoji-picker",
+      "site": "tools",
+      "category": "development",
+      "name": "Emoji 选择器",
+      "description": "轻松复制和粘贴Emoji表情符号，并获得每个表情符号的unicode和code points值.",
+      "url": "https://tools.afeiii.com/emoji-picker",
+      "aliases": [
+        "Emoji picker",
+        "emoji picker",
+        "emoji",
+        "picker",
+        "unicode",
+        "copy",
+        "paste"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:string-obfuscator",
+      "site": "tools",
+      "category": "development",
+      "name": "字符串混淆器",
+      "description": "混淆字符串（如秘密、IBAN 或令牌），使其可共享和可识别，而不泄露其内容。",
+      "url": "https://tools.afeiii.com/string-obfuscator",
+      "aliases": [
+        "String obfuscator",
+        "string obfuscator",
+        "string",
+        "obfuscator",
+        "secret",
+        "token",
+        "hide",
+        "obscure",
+        "mask",
+        "masking"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:text-diff",
+      "site": "tools",
+      "category": "development",
+      "name": "文本比较",
+      "description": "比较两个文本并查看它们之间的差异。",
+      "url": "https://tools.afeiii.com/text-diff",
+      "aliases": [
+        "Text diff",
+        "text diff",
+        "text",
+        "diff",
+        "compare",
+        "string",
+        "code",
+        "文本对比",
+        "比较文本",
+        "文字比较"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:numeronym-generator",
+      "site": "tools",
+      "category": "development",
+      "name": "数字名称生成器",
+      "description": "数字名是一个用数字构成缩写的词。例如，“i18n”是“国际化”的名词，其中18表示单词中第一个i和最后一个n之间的字母数。",
+      "url": "https://tools.afeiii.com/numeronym-generator",
+      "aliases": [
+        "Numeronym generator",
+        "numeronym generator",
+        "numeronym",
+        "generator",
+        "abbreviation",
+        "i18n",
+        "a11y",
+        "l10n"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:ascii-text-drawer",
+      "site": "tools",
+      "category": "development",
+      "name": "ASCII 艺术字生成器 (ASCII Text Drawer)",
+      "description": "基于 FIGlet 引擎将普通文字绘制为风格各异的巨幅 ASCII 艺术立体字。",
+      "url": "https://tools.afeiii.com/ascii-text-drawer",
+      "aliases": [
+        "ASCII text drawer",
+        "ascii text drawer",
+        "ascii",
+        "asciiart",
+        "text",
+        "drawer"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:phone-parser-and-formatter",
+      "site": "tools",
+      "category": "development",
+      "name": "电话分析器和格式化程序",
+      "description": "解析、验证和格式化电话号码。获取有关电话号码的信息，如国家/地区代码、类型等。",
+      "url": "https://tools.afeiii.com/phone-parser-and-formatter",
+      "aliases": [
+        "Phone parser and formatter",
+        "phone parser and formatter",
+        "phone",
+        "parser",
+        "formatter",
+        "validate",
+        "format",
+        "number",
+        "telephone",
+        "mobile",
+        "cell",
+        "international",
+        "national"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tools:iban-validator-and-parser",
+      "site": "tools",
+      "category": "development",
+      "name": "IBAN验证器和解析器",
+      "description": "验证和分析IBAN编号。检查IBAN是否有效，并获取国家BBAN，如果它是QR-IBAN和IBAN友好格式。",
+      "url": "https://tools.afeiii.com/iban-validator-and-parser",
+      "aliases": [
+        "IBAN validator and parser",
+        "iban validator and parser",
+        "iban",
+        "validator",
+        "and",
+        "parser",
+        "bic",
+        "bank"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:edit-pdf-text",
+      "site": "pdf",
+      "category": "documents",
+      "name": "编辑 PDF 文本",
+      "description": "点击任意段落即可就地编辑，支持实时重排、字体和样式设置。",
+      "url": "https://pdf.afeiii.com/zh/edit-pdf-text",
+      "aliases": [
+        "Edit PDF Text",
+        "edit pdf text"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:pdf-workflow",
+      "site": "pdf",
+      "category": "documents",
+      "name": "PDF 工作流构建器",
+      "description": "使用可视化节点编辑器构建自定义 PDF 处理流水线。",
+      "url": "https://pdf.afeiii.com/zh/pdf-workflow",
+      "aliases": [
+        "PDF Workflow Builder",
+        "pdf workflow"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:pdf-multi-tool",
+      "site": "pdf",
+      "category": "documents",
+      "name": "PDF 多功能工具",
+      "description": "在一个统一的界面中合并、分割、组织、删除、旋转、添加空白页、提取和复制。",
+      "url": "https://pdf.afeiii.com/zh/pdf-multi-tool",
+      "aliases": [
+        "PDF Multi Tool",
+        "pdf multi tool"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:merge-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "合并 PDF",
+      "description": "将多个 PDF 合并为一个文件。保留书签。",
+      "url": "https://pdf.afeiii.com/zh/merge-pdf",
+      "aliases": [
+        "Merge PDF",
+        "merge pdf",
+        "PDF合并",
+        "合并PDF",
+        "拼接PDF",
+        "多份PDF合成一份"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:split-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "分割 PDF",
+      "description": "将指定范围的页面提取到新 PDF 中。",
+      "url": "https://pdf.afeiii.com/zh/split-pdf",
+      "aliases": [
+        "Split PDF",
+        "split pdf",
+        "拆分PDF",
+        "PDF拆分",
+        "分割PDF"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:compress-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "压缩 PDF",
+      "description": "减小您的 PDF 文件大小。",
+      "url": "https://pdf.afeiii.com/zh/compress-pdf",
+      "aliases": [
+        "Compress PDF",
+        "compress pdf",
+        "PDF压缩",
+        "压缩PDF",
+        "缩小PDF",
+        "减小PDF体积",
+        "PDF瘦身"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:edit-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "PDF 编辑器",
+      "description": "注释、高亮、涂黑、评论、添加形状/图片、搜索和查看 PDF。",
+      "url": "https://pdf.afeiii.com/edit-pdf",
+      "aliases": [
+        "PDF Editor",
+        "edit pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:jpg-to-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "JPG 转 PDF",
+      "description": "从 JPG、JPEG 和 JPEG2000 (JP2/JPX) 图片创建 PDF。",
+      "url": "https://pdf.afeiii.com/zh/jpg-to-pdf",
+      "aliases": [
+        "JPG to PDF",
+        "jpg to pdf",
+        "图片转PDF",
+        "照片转PDF",
+        "JPG转PDF"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:sign-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "签署 PDF",
+      "description": "绘制、键入或上传您的签名。",
+      "url": "https://pdf.afeiii.com/zh/sign-pdf",
+      "aliases": [
+        "Sign PDF",
+        "sign pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:crop-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "裁剪 PDF",
+      "description": "修剪 PDF 中每一页的边距。",
+      "url": "https://pdf.afeiii.com/zh/crop-pdf",
+      "aliases": [
+        "Crop PDF",
+        "crop pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:extract-pages",
+      "site": "pdf",
+      "category": "documents",
+      "name": "提取页面",
+      "description": "将选定的页面保存为新文件。",
+      "url": "https://pdf.afeiii.com/zh/extract-pages",
+      "aliases": [
+        "Extract Pages",
+        "extract pages"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:organize-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "复制与组织",
+      "description": "复制、重新排序和删除页面。",
+      "url": "https://pdf.afeiii.com/organize-pdf",
+      "aliases": [
+        "Duplicate & Organize",
+        "organize pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:delete-pages",
+      "site": "pdf",
+      "category": "documents",
+      "name": "删除页面",
+      "description": "自您的文档中移除特定页面。",
+      "url": "https://pdf.afeiii.com/zh/delete-pages",
+      "aliases": [
+        "Delete Pages",
+        "delete pages"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:bookmark",
+      "site": "pdf",
+      "category": "documents",
+      "name": "编辑书签",
+      "description": "添加、编辑、导入、删除和提取 PDF 书签。",
+      "url": "https://pdf.afeiii.com/bookmark",
+      "aliases": [
+        "Edit Bookmarks",
+        "bookmark"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:table-of-contents",
+      "site": "pdf",
+      "category": "documents",
+      "name": "目录",
+      "description": "根据 PDF 书签生成目录页。",
+      "url": "https://pdf.afeiii.com/zh/table-of-contents",
+      "aliases": [
+        "Table of Contents",
+        "table of contents"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:page-numbers",
+      "site": "pdf",
+      "category": "documents",
+      "name": "页码",
+      "description": "将页码插入到您的文档中。",
+      "url": "https://pdf.afeiii.com/zh/page-numbers",
+      "aliases": [
+        "Page Numbers",
+        "page numbers"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:add-page-labels",
+      "site": "pdf",
+      "category": "documents",
+      "name": "添加页面标签",
+      "description": "使用罗马数字、前缀和自定义起始值应用 PDF 页面标签。",
+      "url": "https://pdf.afeiii.com/zh/add-page-labels",
+      "aliases": [
+        "Add Page Labels",
+        "add page labels"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:bates-numbering",
+      "site": "pdf",
+      "category": "documents",
+      "name": "Bates编号",
+      "description": "在一个或多个PDF文件中添加连续的Bates编号。",
+      "url": "https://pdf.afeiii.com/zh/bates-numbering",
+      "aliases": [
+        "Bates Numbering",
+        "bates numbering"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:add-watermark",
+      "site": "pdf",
+      "category": "documents",
+      "name": "添加水印",
+      "description": "在您的 PDF 页面上添加文字或图片水印。",
+      "url": "https://pdf.afeiii.com/zh/add-watermark",
+      "aliases": [
+        "Add Watermark",
+        "add watermark"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:header-footer",
+      "site": "pdf",
+      "category": "documents",
+      "name": "页眉和页脚",
+      "description": "在页面顶部和底部添加文字。",
+      "url": "https://pdf.afeiii.com/zh/header-footer",
+      "aliases": [
+        "Header & Footer",
+        "header footer"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:invert-colors",
+      "site": "pdf",
+      "category": "documents",
+      "name": "反转颜色",
+      "description": "创建您的 PDF 的“暗黑模式”版本。",
+      "url": "https://pdf.afeiii.com/zh/invert-colors",
+      "aliases": [
+        "Invert Colors",
+        "invert colors"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:scanner-effect",
+      "site": "pdf",
+      "category": "documents",
+      "name": "扫描效果",
+      "description": "让您的 PDF 看起来像扫描文件。",
+      "url": "https://pdf.afeiii.com/zh/scanner-effect",
+      "aliases": [
+        "Scanner Effect",
+        "scanner effect"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:adjust-colors",
+      "site": "pdf",
+      "category": "documents",
+      "name": "调整颜色",
+      "description": "微调 PDF 的亮度、对比度、饱和度等。",
+      "url": "https://pdf.afeiii.com/zh/adjust-colors",
+      "aliases": [
+        "Adjust Colors",
+        "adjust colors"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:background-color",
+      "site": "pdf",
+      "category": "documents",
+      "name": "背景颜色",
+      "description": "更改您的 PDF 的背景颜色。",
+      "url": "https://pdf.afeiii.com/zh/background-color",
+      "aliases": [
+        "Background Color",
+        "background color"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:text-color",
+      "site": "pdf",
+      "category": "documents",
+      "name": "更改文本颜色",
+      "description": "更改您 PDF 中文本的颜色。",
+      "url": "https://pdf.afeiii.com/text-color",
+      "aliases": [
+        "Change Text Color",
+        "text color"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:add-stamps",
+      "site": "pdf",
+      "category": "documents",
+      "name": "添加印章",
+      "description": "使用注释工具栏向您的 PDF 添加图片印章。",
+      "url": "https://pdf.afeiii.com/zh/add-stamps",
+      "aliases": [
+        "Add Stamps",
+        "add stamps"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:remove-annotations",
+      "site": "pdf",
+      "category": "documents",
+      "name": "移除注释",
+      "description": "移除评论、高亮和链接。",
+      "url": "https://pdf.afeiii.com/zh/remove-annotations",
+      "aliases": [
+        "Remove Annotations",
+        "remove annotations"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:form-filler",
+      "site": "pdf",
+      "category": "documents",
+      "name": "PDF 表单填写器",
+      "description": "直接在浏览器中填写表单。也支持 XFA 表单。",
+      "url": "https://pdf.afeiii.com/form-filler",
+      "aliases": [
+        "PDF Form Filler",
+        "form filler"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:form-creator",
+      "site": "pdf",
+      "category": "documents",
+      "name": "创建 PDF 表单",
+      "description": "使用拖放文本字段创建可填写的 PDF 表单。",
+      "url": "https://pdf.afeiii.com/form-creator",
+      "aliases": [
+        "Create PDF Form",
+        "form creator"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:remove-blank-pages",
+      "site": "pdf",
+      "category": "documents",
+      "name": "移除空白页",
+      "description": "自动检测并删除空白页。",
+      "url": "https://pdf.afeiii.com/zh/remove-blank-pages",
+      "aliases": [
+        "Remove Blank Pages",
+        "remove blank pages"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:image-to-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "图片转 PDF",
+      "description": "将 JPG, PNG, BMP, GIF, TIFF, PNM, PGM, PBM, PPM, PAM, JXR, JPX, JP2, PSD, SVG, HEIC, WebP 转换为 PDF。",
+      "url": "https://pdf.afeiii.com/zh/image-to-pdf",
+      "aliases": [
+        "Images to PDF",
+        "image to pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:png-to-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "PNG 转 PDF",
+      "description": "从一张或多张 PNG 图片创建 PDF。",
+      "url": "https://pdf.afeiii.com/zh/png-to-pdf",
+      "aliases": [
+        "PNG to PDF",
+        "png to pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:webp-to-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "WebP 转 PDF",
+      "description": "从一张或多张 WebP 图片创建 PDF。",
+      "url": "https://pdf.afeiii.com/zh/webp-to-pdf",
+      "aliases": [
+        "WebP to PDF",
+        "webp to pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:svg-to-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "SVG 转 PDF",
+      "description": "从一张或多张 SVG 图片创建 PDF。",
+      "url": "https://pdf.afeiii.com/zh/svg-to-pdf",
+      "aliases": [
+        "SVG to PDF",
+        "svg to pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:bmp-to-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "BMP 转 PDF",
+      "description": "从一张或多张 BMP 图片创建 PDF。",
+      "url": "https://pdf.afeiii.com/zh/bmp-to-pdf",
+      "aliases": [
+        "BMP to PDF",
+        "bmp to pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:heic-to-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "HEIC 转 PDF",
+      "description": "从一张或多张 HEIC 图片创建 PDF。",
+      "url": "https://pdf.afeiii.com/zh/heic-to-pdf",
+      "aliases": [
+        "HEIC to PDF",
+        "heic to pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:tiff-to-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "TIFF 转 PDF",
+      "description": "从一张或多张 TIFF 图片创建 PDF。",
+      "url": "https://pdf.afeiii.com/zh/tiff-to-pdf",
+      "aliases": [
+        "TIFF to PDF",
+        "tiff to pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:txt-to-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "文本转 PDF",
+      "description": "将纯文本文件转换为 PDF。",
+      "url": "https://pdf.afeiii.com/txt-to-pdf",
+      "aliases": [
+        "Text to PDF",
+        "txt to pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:markdown-to-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "Markdown 转 PDF",
+      "description": "编写或粘贴 Markdown 并将其导出为精美格式的 PDF。",
+      "url": "https://pdf.afeiii.com/zh/markdown-to-pdf",
+      "aliases": [
+        "Markdown to PDF",
+        "markdown to pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:json-to-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "JSON 转 PDF",
+      "description": "将 JSON 文件转换为 PDF 格式。",
+      "url": "https://pdf.afeiii.com/zh/json-to-pdf",
+      "aliases": [
+        "JSON to PDF",
+        "json to pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:csv-to-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "CSV 转 PDF",
+      "description": "将 CSV 电子表格文件转换为 PDF 格式。支持多个文件。",
+      "url": "https://pdf.afeiii.com/zh/csv-to-pdf",
+      "aliases": [
+        "CSV to PDF",
+        "csv to pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:xps-to-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "XPS 转 PDF",
+      "description": "将 XPS/OXPS 文档转换为 PDF 格式。支持多个文件。",
+      "url": "https://pdf.afeiii.com/zh/xps-to-pdf",
+      "aliases": [
+        "XPS to PDF",
+        "xps to pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:mobi-to-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "MOBI 转 PDF",
+      "description": "将 MOBI 电子书转换为 PDF 格式。支持多个文件。",
+      "url": "https://pdf.afeiii.com/zh/mobi-to-pdf",
+      "aliases": [
+        "MOBI to PDF",
+        "mobi to pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:epub-to-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "EPUB 转 PDF",
+      "description": "将 EPUB 电子书转换为 PDF 格式。支持多个文件。",
+      "url": "https://pdf.afeiii.com/zh/epub-to-pdf",
+      "aliases": [
+        "EPUB to PDF",
+        "epub to pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:fb2-to-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "FB2 转 PDF",
+      "description": "将 FictionBook (FB2) 电子书转换为 PDF 格式。支持多个文件。",
+      "url": "https://pdf.afeiii.com/zh/fb2-to-pdf",
+      "aliases": [
+        "FB2 to PDF",
+        "fb2 to pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:cbz-to-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "CBZ 转 PDF",
+      "description": "将漫画档案 (CBZ/CBR) 转换为 PDF 格式。支持多个文件。",
+      "url": "https://pdf.afeiii.com/zh/cbz-to-pdf",
+      "aliases": [
+        "CBZ to PDF",
+        "cbz to pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:xml-to-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "XML 转 PDF",
+      "description": "将 XML 文档转换为 PDF 格式。支持多个文件。",
+      "url": "https://pdf.afeiii.com/zh/xml-to-pdf",
+      "aliases": [
+        "XML to PDF",
+        "xml to pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:psd-to-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "PSD 转 PDF",
+      "description": "将 Adobe Photoshop (PSD) 文件转换为 PDF 格式。支持多个文件。",
+      "url": "https://pdf.afeiii.com/zh/psd-to-pdf",
+      "aliases": [
+        "PSD to PDF",
+        "psd to pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:email-to-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "邮件转 PDF",
+      "description": "将电子邮件文件 (EML, MSG) 转换为 PDF 格式。支持 Outlook 导出和标准邮件格式。",
+      "url": "https://pdf.afeiii.com/zh/email-to-pdf",
+      "aliases": [
+        "Email to PDF",
+        "email to pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:pdf-to-jpg",
+      "site": "pdf",
+      "category": "documents",
+      "name": "PDF 转 JPG",
+      "description": "将每一页 PDF 转换为 JPG 图片。",
+      "url": "https://pdf.afeiii.com/zh/pdf-to-jpg",
+      "aliases": [
+        "PDF to JPG",
+        "pdf to jpg",
+        "PDF转图片",
+        "PDF转JPG",
+        "PDF转照片"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:pdf-to-png",
+      "site": "pdf",
+      "category": "documents",
+      "name": "PDF 转 PNG",
+      "description": "将每一页 PDF 转换为 PNG 图片。",
+      "url": "https://pdf.afeiii.com/zh/pdf-to-png",
+      "aliases": [
+        "PDF to PNG",
+        "pdf to png",
+        "PDF转PNG"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:pdf-to-webp",
+      "site": "pdf",
+      "category": "documents",
+      "name": "PDF 转 WebP",
+      "description": "将每一页 PDF 转换为 WebP 图片。",
+      "url": "https://pdf.afeiii.com/zh/pdf-to-webp",
+      "aliases": [
+        "PDF to WebP",
+        "pdf to webp"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:pdf-to-bmp",
+      "site": "pdf",
+      "category": "documents",
+      "name": "PDF 转 BMP",
+      "description": "将每一页 PDF 转换为 BMP 图片。",
+      "url": "https://pdf.afeiii.com/zh/pdf-to-bmp",
+      "aliases": [
+        "PDF to BMP",
+        "pdf to bmp"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:pdf-to-tiff",
+      "site": "pdf",
+      "category": "documents",
+      "name": "PDF 转 TIFF",
+      "description": "将每一页 PDF 转换为 TIFF 图片。",
+      "url": "https://pdf.afeiii.com/zh/pdf-to-tiff",
+      "aliases": [
+        "PDF to TIFF",
+        "pdf to tiff"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:pdf-to-cbz",
+      "site": "pdf",
+      "category": "documents",
+      "name": "PDF 转 CBZ",
+      "description": "将 PDF 转换为 CBZ (漫画书归档) 文件，适用于漫画阅读器。",
+      "url": "https://pdf.afeiii.com/zh/pdf-to-cbz",
+      "aliases": [
+        "PDF to CBZ",
+        "pdf to cbz"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:pdf-to-svg",
+      "site": "pdf",
+      "category": "documents",
+      "name": "PDF 转 SVG",
+      "description": "将 PDF 文件的每一页转换为可缩放矢量图形 (SVG)，在任何尺寸下都能保持完美质量。",
+      "url": "https://pdf.afeiii.com/zh/pdf-to-svg",
+      "aliases": [
+        "PDF to SVG",
+        "pdf to svg"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:pdf-to-csv",
+      "site": "pdf",
+      "category": "documents",
+      "name": "PDF 转 CSV",
+      "description": "从 PDF 中提取表格并转换为 CSV 格式。",
+      "url": "https://pdf.afeiii.com/zh/pdf-to-csv",
+      "aliases": [
+        "PDF to CSV",
+        "pdf to csv"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:pdf-to-excel",
+      "site": "pdf",
+      "category": "documents",
+      "name": "PDF 转 Excel",
+      "description": "从 PDF 中提取表格并转换为 Excel (XLSX) 格式。",
+      "url": "https://pdf.afeiii.com/zh/pdf-to-excel",
+      "aliases": [
+        "PDF to Excel",
+        "pdf to excel"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:pdf-to-greyscale",
+      "site": "pdf",
+      "category": "documents",
+      "name": "PDF 转 灰度",
+      "description": "将所有颜色转换为黑白。",
+      "url": "https://pdf.afeiii.com/zh/pdf-to-greyscale",
+      "aliases": [
+        "PDF to Greyscale",
+        "pdf to greyscale"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:pdf-to-json",
+      "site": "pdf",
+      "category": "documents",
+      "name": "PDF 转 JSON",
+      "description": "将 PDF 文件转换为 JSON 格式。",
+      "url": "https://pdf.afeiii.com/zh/pdf-to-json",
+      "aliases": [
+        "PDF to JSON",
+        "pdf to json"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:pdf-to-word",
+      "site": "pdf",
+      "category": "documents",
+      "name": "PDF 转 Word",
+      "description": "将 PDF 文件转换为可编辑的 Word 文档。",
+      "url": "https://pdf.afeiii.com/zh/pdf-to-word",
+      "aliases": [
+        "PDF to Word",
+        "pdf to word"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:extract-images",
+      "site": "pdf",
+      "category": "documents",
+      "name": "提取图片",
+      "description": "从 PDF 文件中提取所有嵌入的图片。",
+      "url": "https://pdf.afeiii.com/zh/extract-images",
+      "aliases": [
+        "Extract Images",
+        "extract images"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:pdf-to-markdown",
+      "site": "pdf",
+      "category": "documents",
+      "name": "PDF 转 Markdown",
+      "description": "将 PDF 文本和表格转换为 Markdown 格式。",
+      "url": "https://pdf.afeiii.com/zh/pdf-to-markdown",
+      "aliases": [
+        "PDF to Markdown",
+        "pdf to markdown"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:prepare-pdf-for-ai",
+      "site": "pdf",
+      "category": "documents",
+      "name": "为 AI 准备 PDF",
+      "description": "将 PDF 内容提取为 LlamaIndex JSON，用于 RAG/LLM 管道。",
+      "url": "https://pdf.afeiii.com/zh/prepare-pdf-for-ai",
+      "aliases": [
+        "Prepare PDF for AI",
+        "prepare pdf for ai"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:pdf-to-text",
+      "site": "pdf",
+      "category": "documents",
+      "name": "PDF 转 文本",
+      "description": "从 PDF 文件中提取文本并保存为纯文本文件 (.txt)。支持多个文件。",
+      "url": "https://pdf.afeiii.com/zh/pdf-to-text",
+      "aliases": [
+        "PDF to Text",
+        "pdf to text"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:ocr-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "OCR PDF",
+      "description": "使 PDF 可搜索和可复制。",
+      "url": "https://pdf.afeiii.com/zh/ocr-pdf",
+      "aliases": [
+        "OCR PDF",
+        "ocr pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:alternate-merge",
+      "site": "pdf",
+      "category": "documents",
+      "name": "交替混合页面",
+      "description": "通过交替每个 PDF 的页面来合并 PDF。保留书签。",
+      "url": "https://pdf.afeiii.com/zh/alternate-merge",
+      "aliases": [
+        "Alternate & Mix Pages",
+        "alternate merge"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:duplex-collate",
+      "site": "pdf",
+      "category": "documents",
+      "name": "双面扫描整理",
+      "description": "将分两块扫描的 PDF（先全部正面，再全部背面）重新排列为正确的正面/背面顺序。",
+      "url": "https://pdf.afeiii.com/zh/duplex-collate",
+      "aliases": [
+        "Duplex Collate",
+        "duplex collate"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:overlay-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "PDF 叠加",
+      "description": "将一个 PDF 的页面叠加或衬垫到另一个 PDF 上。",
+      "url": "https://pdf.afeiii.com/overlay-pdf",
+      "aliases": [
+        "PDF Overlay",
+        "overlay pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:add-attachments",
+      "site": "pdf",
+      "category": "documents",
+      "name": "添加附件",
+      "description": "将一个或多个文件嵌入到您的 PDF 中。",
+      "url": "https://pdf.afeiii.com/zh/add-attachments",
+      "aliases": [
+        "Add Attachments",
+        "add attachments"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:extract-attachments",
+      "site": "pdf",
+      "category": "documents",
+      "name": "提取附件",
+      "description": "从 PDF 中提取所有嵌入的文件为 ZIP。",
+      "url": "https://pdf.afeiii.com/zh/extract-attachments",
+      "aliases": [
+        "Extract Attachments",
+        "extract attachments"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:edit-attachments",
+      "site": "pdf",
+      "category": "documents",
+      "name": "编辑附件",
+      "description": "查看或移除 PDF 中的附件。",
+      "url": "https://pdf.afeiii.com/zh/edit-attachments",
+      "aliases": [
+        "Edit Attachments",
+        "edit attachments"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:pdf-layers",
+      "site": "pdf",
+      "category": "documents",
+      "name": "PDF 图层 (OCG)",
+      "description": "查看、切换、添加和删除 PDF 中的 OCG 图层。",
+      "url": "https://pdf.afeiii.com/pdf-layers",
+      "aliases": [
+        "PDF OCG",
+        "pdf layers"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:extract-tables",
+      "site": "pdf",
+      "category": "documents",
+      "name": "提取 PDF 表格",
+      "description": "从 PDF 文件中提取表格，并导出为 CSV、JSON 或 Markdown 格式。",
+      "url": "https://pdf.afeiii.com/zh/extract-tables",
+      "aliases": [
+        "Extract Tables",
+        "extract tables"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:divide-pages",
+      "site": "pdf",
+      "category": "documents",
+      "name": "分割页面",
+      "description": "水平或垂直分割页面。",
+      "url": "https://pdf.afeiii.com/zh/divide-pages",
+      "aliases": [
+        "Divide Pages",
+        "divide pages"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:add-blank-page",
+      "site": "pdf",
+      "category": "documents",
+      "name": "添加空白页",
+      "description": "在 PDF 的任意位置插入空白页。",
+      "url": "https://pdf.afeiii.com/zh/add-blank-page",
+      "aliases": [
+        "Add Blank Page",
+        "add blank page"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:reverse-pages",
+      "site": "pdf",
+      "category": "documents",
+      "name": "反转页面",
+      "description": "反转文档中所有页面的顺序。",
+      "url": "https://pdf.afeiii.com/zh/reverse-pages",
+      "aliases": [
+        "Reverse Pages",
+        "reverse pages"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:rotate-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "旋转 PDF",
+      "description": "以 90 度增量旋转页面。",
+      "url": "https://pdf.afeiii.com/zh/rotate-pdf",
+      "aliases": [
+        "Rotate PDF",
+        "rotate pdf",
+        "PDF旋转",
+        "旋转PDF"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:rotate-custom",
+      "site": "pdf",
+      "category": "documents",
+      "name": "按自定义角度旋转",
+      "description": "按任意自定义角度旋转页面。",
+      "url": "https://pdf.afeiii.com/zh/rotate-custom",
+      "aliases": [
+        "Rotate by Custom Degrees",
+        "rotate custom"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:n-up-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "N-Up PDF",
+      "description": "将多页排列在单张纸上。",
+      "url": "https://pdf.afeiii.com/zh/n-up-pdf",
+      "aliases": [
+        "N-Up PDF",
+        "n up pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:pdf-booklet",
+      "site": "pdf",
+      "category": "documents",
+      "name": "PDF 小册子",
+      "description": "重新排列页面用于双面小册子打印。折叠并装订以创建小册子。",
+      "url": "https://pdf.afeiii.com/zh/pdf-booklet",
+      "aliases": [
+        "PDF Booklet",
+        "pdf booklet"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:combine-single-page",
+      "site": "pdf",
+      "category": "documents",
+      "name": "合并为单页",
+      "description": "将所有页面拼接成一个连续的滚动页面。",
+      "url": "https://pdf.afeiii.com/combine-single-page",
+      "aliases": [
+        "Combine to Single Page",
+        "combine single page"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:view-metadata",
+      "site": "pdf",
+      "category": "documents",
+      "name": "查看元数据",
+      "description": "检查 PDF 的隐藏属性。",
+      "url": "https://pdf.afeiii.com/zh/view-metadata",
+      "aliases": [
+        "View Metadata",
+        "view metadata"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:edit-metadata",
+      "site": "pdf",
+      "category": "documents",
+      "name": "编辑元数据",
+      "description": "更改作者、标题和其他属性。",
+      "url": "https://pdf.afeiii.com/zh/edit-metadata",
+      "aliases": [
+        "Edit Metadata",
+        "edit metadata"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:pdf-to-zip",
+      "site": "pdf",
+      "category": "documents",
+      "name": "PDF 转 ZIP",
+      "description": "将多个 PDF 文件打包成一个 ZIP 归档。",
+      "url": "https://pdf.afeiii.com/pdf-to-zip",
+      "aliases": [
+        "PDFs to ZIP",
+        "pdf to zip"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:compare-pdfs",
+      "site": "pdf",
+      "category": "documents",
+      "name": "比较 PDF",
+      "description": "并排比较两个 PDF。",
+      "url": "https://pdf.afeiii.com/zh/compare-pdfs",
+      "aliases": [
+        "Compare PDFs",
+        "compare pdfs"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:posterize-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "海报化 PDF",
+      "description": "将大页面分割成多个小页面。",
+      "url": "https://pdf.afeiii.com/zh/posterize-pdf",
+      "aliases": [
+        "Posterize PDF",
+        "posterize pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:pdf-to-pdfa",
+      "site": "pdf",
+      "category": "documents",
+      "name": "PDF 转 PDF/A",
+      "description": "将 PDF 转换为 PDF/A 格式以进行长期存档。",
+      "url": "https://pdf.afeiii.com/zh/pdf-to-pdfa",
+      "aliases": [
+        "PDF to PDF/A",
+        "pdf to pdfa"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:fix-page-size",
+      "site": "pdf",
+      "category": "documents",
+      "name": "修复页面尺寸",
+      "description": "将所有页面标准化为统一尺寸。",
+      "url": "https://pdf.afeiii.com/zh/fix-page-size",
+      "aliases": [
+        "Fix Page Size",
+        "fix page size"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:linearize-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "线性化 PDF",
+      "description": "优化 PDF 以便快速网络查看。",
+      "url": "https://pdf.afeiii.com/zh/linearize-pdf",
+      "aliases": [
+        "Linearize PDF",
+        "linearize pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:page-dimensions",
+      "site": "pdf",
+      "category": "documents",
+      "name": "页面尺寸",
+      "description": "分析页面大小、方向和单位。",
+      "url": "https://pdf.afeiii.com/zh/page-dimensions",
+      "aliases": [
+        "Page Dimensions",
+        "page dimensions"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:remove-restrictions",
+      "site": "pdf",
+      "category": "documents",
+      "name": "移除限制",
+      "description": "移除与数字签名 PDF 文件相关的密码保护和安全限制。",
+      "url": "https://pdf.afeiii.com/zh/remove-restrictions",
+      "aliases": [
+        "Remove Restrictions",
+        "remove restrictions"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:repair-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "修复 PDF",
+      "description": "从损坏的 PDF 文件中恢复数据。",
+      "url": "https://pdf.afeiii.com/zh/repair-pdf",
+      "aliases": [
+        "Repair PDF",
+        "repair pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:rasterize-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "栅格化 PDF",
+      "description": "将 PDF 转换为基于图像的 PDF。展平图层并移除可选择的文本。",
+      "url": "https://pdf.afeiii.com/zh/rasterize-pdf",
+      "aliases": [
+        "Rasterize PDF",
+        "rasterize pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:deskew-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "校正 PDF",
+      "description": "使用 OpenCV 自动校正倾斜的扫描页面。",
+      "url": "https://pdf.afeiii.com/zh/deskew-pdf",
+      "aliases": [
+        "Deskew PDF",
+        "deskew pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:font-to-outline",
+      "site": "pdf",
+      "category": "documents",
+      "name": "字体转轮廓",
+      "description": "将所有字体转换为矢量轮廓，确保在所有设备上一致呈现。",
+      "url": "https://pdf.afeiii.com/zh/font-to-outline",
+      "aliases": [
+        "Font to Outline",
+        "font to outline"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:protect-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "加密 PDF",
+      "description": "通过添加密码锁定您的 PDF。",
+      "url": "https://pdf.afeiii.com/zh/protect-pdf",
+      "aliases": [
+        "Protect PDF",
+        "protect pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:sanitize-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "清理 PDF",
+      "description": "移除元数据、注释、脚本等。",
+      "url": "https://pdf.afeiii.com/zh/sanitize-pdf",
+      "aliases": [
+        "Sanitize PDF",
+        "sanitize pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:unlock-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "解密 PDF",
+      "description": "通过移除密码保护解锁 PDF。",
+      "url": "https://pdf.afeiii.com/zh/unlock-pdf",
+      "aliases": [
+        "Unlock PDF",
+        "unlock pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:flatten-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "扁平化 PDF",
+      "description": "使表单字段和注释不可编辑。",
+      "url": "https://pdf.afeiii.com/zh/flatten-pdf",
+      "aliases": [
+        "Flatten PDF",
+        "flatten pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:remove-metadata",
+      "site": "pdf",
+      "category": "documents",
+      "name": "移除元数据",
+      "description": "从 PDF 中剥离隐藏数据。",
+      "url": "https://pdf.afeiii.com/zh/remove-metadata",
+      "aliases": [
+        "Remove Metadata",
+        "remove metadata"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:change-permissions",
+      "site": "pdf",
+      "category": "documents",
+      "name": "更改权限",
+      "description": "设置或更改 PDF 上的用户权限。",
+      "url": "https://pdf.afeiii.com/zh/change-permissions",
+      "aliases": [
+        "Change Permissions",
+        "change permissions"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:digital-sign-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "PDF 数字签名",
+      "description": "使用 X.509 证书为您的 PDF 添加加密数字签名。支持 PKCS#12 (.pfx, .p12) 和 PEM 格式。您的私钥永远不会离开您的浏览器。",
+      "url": "https://pdf.afeiii.com/zh/digital-sign-pdf",
+      "aliases": [
+        "Digital Signature",
+        "digital sign pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:validate-signature-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "验证 PDF 签名",
+      "description": "验证您的 PDF 文件中的数字签名。检查证书有效性、查看签名者详情并确认文档完整性。所有处理都在您的浏览器中进行。",
+      "url": "https://pdf.afeiii.com/zh/validate-signature-pdf",
+      "aliases": [
+        "Validate Signature",
+        "validate signature pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pdf:timestamp-pdf",
+      "site": "pdf",
+      "category": "documents",
+      "name": "PDF 时间戳",
+      "description": "通过可信的 TSA 服务器为您的 PDF 添加 RFC 3161 时间戳。证明您的文档在特定时间点存在。无需证书。",
+      "url": "https://pdf.afeiii.com/zh/timestamp-pdf",
+      "aliases": [
+        "Timestamp PDF",
+        "timestamp pdf"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "convert:image",
+      "site": "convert",
+      "category": "media",
+      "name": "图片格式转换",
+      "description": "转换图片格式。进入后上传图片并选择目标格式；部分格式仅支持输入，输出能力以工具内列表为准。",
+      "url": "https://convert.afeiii.com/",
+      "aliases": [
+        "图片转换",
+        "照片格式",
+        "PNG转WebP",
+        "WebP转PNG",
+        "JPG转PNG",
+        "HEIC",
+        "image converter",
+        "png",
+        "jpeg",
+        "jpg",
+        "webp",
+        "gif",
+        "svg",
+        "jxl",
+        "avif",
+        "heic",
+        "heif",
+        "mpo",
+        "ico",
+        "bmp",
+        "cur",
+        "ani",
+        "icns",
+        "nef",
+        "cr2",
+        "hdr",
+        "jpe",
+        "mat",
+        "pbm",
+        "pfm",
+        "pgm",
+        "pnm",
+        "ppm",
+        "tiff",
+        "jfif",
+        "eps",
+        "psd",
+        "dcm",
+        "qoi",
+        "arw",
+        "tif",
+        "dng",
+        "xcf",
+        "rw2",
+        "raf",
+        "orf",
+        "pef",
+        "mos",
+        "raw",
+        "dcr",
+        "crw",
+        "cr3",
+        "3fr",
+        "erf",
+        "mrw",
+        "mef",
+        "nrw",
+        "srw",
+        "sr2",
+        "srf",
+        "a",
+        "aai",
+        "ai",
+        "art",
+        "avs",
+        "b",
+        "bgr",
+        "bgra",
+        "bgro",
+        "bmp2",
+        "bmp3",
+        "brf",
+        "cal",
+        "cals",
+        "cin",
+        "cip",
+        "cmyk",
+        "cmyka",
+        "dcx",
+        "dds",
+        "dpx",
+        "dxt1",
+        "dxt5",
+        "epdf",
+        "epi",
+        "eps2",
+        "eps3",
+        "epsf",
+        "epsi",
+        "ept",
+        "ept2",
+        "ept3",
+        "exr",
+        "farbfeld",
+        "fax",
+        "ff",
+        "fit",
+        "fits",
+        "fl32",
+        "fts",
+        "ftxt",
+        "g",
+        "g3",
+        "g4",
+        "gif87",
+        "gray",
+        "graya",
+        "group4",
+        "hrz",
+        "icb",
+        "icon",
+        "info",
+        "ipl",
+        "isobrl",
+        "isobrl6",
+        "j2c",
+        "j2k",
+        "jng",
+        "jp2",
+        "jpc",
+        "jpm",
+        "jps",
+        "map",
+        "miff",
+        "mng",
+        "mono",
+        "mtv",
+        "o",
+        "otb",
+        "pal",
+        "palm",
+        "pam",
+        "pcd",
+        "pcds",
+        "pcl",
+        "pct",
+        "pcx",
+        "pdb",
+        "pgx",
+        "phm",
+        "picon",
+        "pict",
+        "pjpeg",
+        "png00",
+        "png24",
+        "png32",
+        "png48",
+        "png64",
+        "png8",
+        "ps",
+        "ps2",
+        "ps3",
+        "psb",
+        "ptif",
+        "r",
+        "ras",
+        "rgb",
+        "rgba",
+        "rgbo",
+        "rgf",
+        "sgi",
+        "six",
+        "sixel",
+        "sparse-color",
+        "strimg",
+        "sun",
+        "svgz",
+        "tga",
+        "tiff64",
+        "ubrl",
+        "ubrl6",
+        "uil",
+        "uyvy",
+        "vda",
+        "vicar",
+        "viff",
+        "vips",
+        "vst",
+        "wbmp",
+        "wpg",
+        "xbm",
+        "xpm",
+        "xv",
+        "ycbcr",
+        "ycbcra",
+        "yuv"
+      ],
+      "kind": "shared"
+    },
+    {
+      "id": "convert:audio",
+      "site": "convert",
+      "category": "media",
+      "name": "音频格式转换",
+      "description": "转换音频格式。进入后选择文件和目标格式；文件在浏览器中处理。",
+      "url": "https://convert.afeiii.com/",
+      "aliases": [
+        "音频转换",
+        "音乐格式",
+        "WAV转MP3",
+        "MP3转WAV",
+        "audio converter",
+        "mp3",
+        "wav",
+        "flac",
+        "ogg",
+        "mogg",
+        "oga",
+        "opus",
+        "aac",
+        "alac",
+        "m4a",
+        "caf",
+        "qoa",
+        "wma",
+        "ac3",
+        "aiff",
+        "aifc",
+        "aif",
+        "mp1",
+        "mp2",
+        "mpc",
+        "dsd",
+        "dsf",
+        "dff",
+        "mqa",
+        "au",
+        "m4b",
+        "voc"
+      ],
+      "kind": "shared"
+    },
+    {
+      "id": "convert:video",
+      "site": "convert",
+      "category": "media",
+      "name": "视频格式转换",
+      "description": "转换受支持的视频格式。进入后选择文件和目标格式；编码兼容性受浏览器与设备限制。",
+      "url": "https://convert.afeiii.com/",
+      "aliases": [
+        "视频转换",
+        "MP4转WebM",
+        "MP4转MKV",
+        "MKV转MP4",
+        "video converter",
+        "mp4",
+        "m4v",
+        "mkv",
+        "webm",
+        "mov",
+        "f4v",
+        "3gp",
+        "3g2",
+        "mts",
+        "m2ts",
+        "ts"
+      ],
+      "kind": "shared"
+    },
+    {
+      "id": "convert:document",
+      "site": "convert",
+      "category": "documents",
+      "name": "文档格式转换",
+      "description": "转换 Markdown、DOCX、HTML 等文档。进入后选择文件和目标格式；JSON 仅指 Pandoc 文档结构，格式方向以工具内列表为准。",
+      "url": "https://convert.afeiii.com/",
+      "aliases": [
+        "文档转换",
+        "Markdown转DOCX",
+        "DOCX转Markdown",
+        "Markdown转HTML",
+        "EPUB",
+        "document converter",
+        "docx",
+        "md",
+        "html",
+        "rtf",
+        "csv",
+        "tsv",
+        "json",
+        "rst",
+        "epub",
+        "odt",
+        "docbook"
+      ],
+      "kind": "shared"
+    },
+    {
+      "id": "resume:editor",
+      "site": "resume",
+      "category": "career",
+      "name": "在线简历制作与 PDF 导出",
+      "description": "从模板开始编辑、保存并导出简历；创建和管理简历需要登录账号。",
+      "url": "https://resume.afeiii.com/",
+      "aliases": [
+        "简历",
+        "简历模板",
+        "制作简历",
+        "简历编辑",
+        "简历下载",
+        "简历导出",
+        "CV",
+        "resume"
+      ],
+      "kind": "account"
+    },
+    {
+      "id": "check:website",
+      "site": "check",
+      "category": "development",
+      "name": "网站综合检测",
+      "description": "输入公开网址，检查 DNS、SSL 证书、HTTP、SEO、安全头和网站配置。",
+      "url": "https://check.afeiii.com/",
+      "aliases": [
+        "网站检测",
+        "域名检测",
+        "证书查询",
+        "SSL检查",
+        "DNS查询",
+        "HTTP响应头",
+        "robots",
+        "robots.txt",
+        "SEO",
+        "HSTS",
+        "CAA",
+        "sitemap",
+        "安全头",
+        "重定向",
+        "邮件配置",
+        "IP查询",
+        "网站性能",
+        "website check"
+      ],
+      "kind": "shared"
+    },
+    {
+      "id": "check:get-ip",
+      "site": "check",
+      "category": "development",
+      "name": "IP 地址",
+      "description": "查询域名解析到的公网 IP 地址。",
+      "url": "https://check.afeiii.com/get-ip",
+      "aliases": [
+        "get ip",
+        "IP 地址检测",
+        "IP 地址查询"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "check:ssl",
+      "site": "check",
+      "category": "development",
+      "name": "SSL 证书",
+      "description": "查看证书签发机构、有效期、域名与证书链。",
+      "url": "https://check.afeiii.com/ssl",
+      "aliases": [
+        "ssl",
+        "SSL 证书检测",
+        "SSL 证书查询"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "check:dns",
+      "site": "check",
+      "category": "development",
+      "name": "DNS 记录",
+      "description": "查询 A、AAAA、MX、NS、CNAME 等域名记录。",
+      "url": "https://check.afeiii.com/dns",
+      "aliases": [
+        "dns",
+        "DNS 记录检测",
+        "DNS 记录查询"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "check:cookies",
+      "site": "check",
+      "category": "development",
+      "name": "Cookie 检查",
+      "description": "查看首次响应中的 Cookie 与安全属性。",
+      "url": "https://check.afeiii.com/cookies",
+      "aliases": [
+        "cookies",
+        "Cookie 检查检测",
+        "Cookie 检查查询"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "check:robots-txt",
+      "site": "check",
+      "category": "development",
+      "name": "抓取规则",
+      "description": "读取 robots.txt，了解网站对爬虫的访问规则。",
+      "url": "https://check.afeiii.com/robots-txt",
+      "aliases": [
+        "robots txt",
+        "抓取规则检测",
+        "抓取规则查询"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "check:headers",
+      "site": "check",
+      "category": "development",
+      "name": "HTTP 响应头",
+      "description": "查看服务器返回的响应头与服务信息。",
+      "url": "https://check.afeiii.com/headers",
+      "aliases": [
+        "headers",
+        "HTTP 响应头检测",
+        "HTTP 响应头查询"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "check:redirects",
+      "site": "check",
+      "category": "development",
+      "name": "跳转链",
+      "description": "检查网站的 HTTP 跳转路径与最终地址。",
+      "url": "https://check.afeiii.com/redirects",
+      "aliases": [
+        "redirects",
+        "跳转链检测",
+        "跳转链查询"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "check:txt-records",
+      "site": "check",
+      "category": "development",
+      "name": "TXT 记录",
+      "description": "查看域名验证、邮件策略等 TXT 记录。",
+      "url": "https://check.afeiii.com/txt-records",
+      "aliases": [
+        "txt records",
+        "TXT 记录检测",
+        "TXT 记录查询"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "check:status",
+      "site": "check",
+      "category": "development",
+      "name": "网站响应",
+      "description": "检测网站响应状态及各阶段耗时。",
+      "url": "https://check.afeiii.com/status",
+      "aliases": [
+        "status",
+        "网站响应检测",
+        "网站响应查询"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "check:caa-records",
+      "site": "check",
+      "category": "development",
+      "name": "CAA 记录",
+      "description": "查看允许为域名签发证书的证书机构。",
+      "url": "https://check.afeiii.com/caa-records",
+      "aliases": [
+        "caa records",
+        "CAA 记录检测",
+        "CAA 记录查询"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "check:hsts",
+      "site": "check",
+      "category": "development",
+      "name": "HSTS 检查",
+      "description": "查看网站是否声明强制 HTTPS 及其有效时间。",
+      "url": "https://check.afeiii.com/hsts",
+      "aliases": [
+        "hsts",
+        "HSTS 检查检测",
+        "HSTS 检查查询"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "check:dns-server",
+      "site": "check",
+      "category": "development",
+      "name": "权威 DNS",
+      "description": "查看域名的权威名称服务器。",
+      "url": "https://check.afeiii.com/dns-server",
+      "aliases": [
+        "dns server",
+        "权威 DNS检测",
+        "权威 DNS查询"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "check:sitemap",
+      "site": "check",
+      "category": "development",
+      "name": "站点地图",
+      "description": "读取网站 sitemap，查看页面发现入口。",
+      "url": "https://check.afeiii.com/sitemap",
+      "aliases": [
+        "sitemap",
+        "站点地图检测",
+        "站点地图查询"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "check:security-txt",
+      "site": "check",
+      "category": "development",
+      "name": "安全联系信息",
+      "description": "读取网站公开的 security.txt 安全联系信息。",
+      "url": "https://check.afeiii.com/security-txt",
+      "aliases": [
+        "security txt",
+        "安全联系信息检测",
+        "安全联系信息查询"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "check:linked-pages",
+      "site": "check",
+      "category": "development",
+      "name": "页面链接",
+      "description": "查看页面包含的站内与外部链接。",
+      "url": "https://check.afeiii.com/linked-pages",
+      "aliases": [
+        "linked pages",
+        "页面链接检测",
+        "页面链接查询"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "check:social-tags",
+      "site": "check",
+      "category": "development",
+      "name": "SEO 与分享标签",
+      "description": "查看标题、描述、canonical 与社交分享标签。",
+      "url": "https://check.afeiii.com/social-tags",
+      "aliases": [
+        "social tags",
+        "SEO 与分享标签检测",
+        "SEO 与分享标签查询"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "check:mail-config",
+      "site": "check",
+      "category": "development",
+      "name": "邮件域名配置",
+      "description": "检查 MX、SPF、DKIM 与 DMARC 等公开邮件记录。",
+      "url": "https://check.afeiii.com/mail-config",
+      "aliases": [
+        "mail config",
+        "邮件域名配置检测",
+        "邮件域名配置查询"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "check:http-security",
+      "site": "check",
+      "category": "development",
+      "name": "HTTP 安全头",
+      "description": "查看 CSP、防止类型嗅探等响应安全策略。",
+      "url": "https://check.afeiii.com/http-security",
+      "aliases": [
+        "http security",
+        "HTTP 安全头检测",
+        "HTTP 安全头查询"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "check:security",
+      "site": "check",
+      "category": "development",
+      "name": "网站安全配置检测",
+      "description": "查看 SSL 证书、HTTP 安全头、Cookie 与 HTTPS 配置。",
+      "url": "https://check.afeiii.com/security",
+      "aliases": [
+        "网站安全",
+        "security"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "check:seo",
+      "site": "check",
+      "category": "development",
+      "name": "网站 SEO 配置检测",
+      "description": "查看 robots.txt、站点地图、跳转与页面分享标签。",
+      "url": "https://check.afeiii.com/seo",
+      "aliases": [
+        "搜索优化",
+        "seo"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "check:server",
+      "site": "check",
+      "category": "development",
+      "name": "网站服务检测",
+      "description": "查看网站解析、响应头、响应状态与跳转。",
+      "url": "https://check.afeiii.com/server",
+      "aliases": [
+        "网站服务",
+        "server"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "check:domain",
+      "site": "check",
+      "category": "development",
+      "name": "域名与 DNS 查询",
+      "description": "查看 DNS、TXT、CAA 记录与权威名称服务器。",
+      "url": "https://check.afeiii.com/domain",
+      "aliases": [
+        "域名与 DNS",
+        "domain"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "check:email",
+      "site": "check",
+      "category": "development",
+      "name": "域名邮件配置检测",
+      "description": "查看 MX、SPF、DKIM 与 DMARC 等公开邮件配置。",
+      "url": "https://check.afeiii.com/email",
+      "aliases": [
+        "邮件配置",
+        "email"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "check:performance",
+      "site": "check",
+      "category": "development",
+      "name": "网站响应检测",
+      "description": "查看网站状态、响应耗时与跳转路径。",
+      "url": "https://check.afeiii.com/performance",
+      "aliases": [
+        "响应与耗时",
+        "performance"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "check:privacy",
+      "site": "check",
+      "category": "development",
+      "name": "网站隐私配置检测",
+      "description": "查看 Cookie、安全属性及页面公开链接。",
+      "url": "https://check.afeiii.com/privacy",
+      "aliases": [
+        "隐私配置",
+        "privacy"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "guide:image-format-conversion",
+      "site": "portal",
+      "category": "media",
+      "name": "JPG、PNG、WebP 怎么选？图片格式转换指南",
+      "description": "用透明 PNG 样例演示图片转换：选择 JPG、PNG 或 WebP，下载后检查尺寸与背景，理解体积变化和画质限制。",
+      "url": "https://afeiii.com/guides/image-format-conversion/",
+      "aliases": [
+        "教程",
+        "使用指南"
+      ],
+      "kind": "guide"
+    },
+    {
+      "id": "guide:merge-compress-pdf",
+      "site": "portal",
+      "category": "documents",
+      "name": "PDF 怎么合并和压缩？顺序、清晰度与下载检查",
+      "description": "使用两份演示文档合并 PDF，确认页序，再选择压缩方式。说明 Photon 的文字与链接限制、引擎配置提示和输出检查。",
+      "url": "https://afeiii.com/guides/merge-compress-pdf/",
+      "aliases": [
+        "教程",
+        "使用指南"
+      ],
+      "kind": "guide"
+    },
+    {
+      "id": "guide:json-formatting",
+      "site": "portal",
+      "category": "development",
+      "name": "JSON 怎么格式化？缩进、语法排查与数据注意事项",
+      "description": "用可复制的中文 JSON 样例演示实时格式化、缩进与键名排序，说明 JSON5 兼容、语法排查、大整数和浏览器本地保存。",
+      "url": "https://afeiii.com/guides/json-formatting/",
+      "aliases": [
+        "教程",
+        "使用指南"
+      ],
+      "kind": "guide"
+    },
+    {
+      "id": "guide:resume-create-export",
+      "site": "portal",
+      "category": "career",
+      "name": "在线简历怎么制作并导出 PDF？从建档到分享",
+      "description": "了解十三月简历的账号保存、创建文档、内容编辑、模板排版、PDF 导出与分享设置，按清单检查中文、分页和联系方式。",
+      "url": "https://afeiii.com/guides/resume-create-export/",
+      "aliases": [
+        "教程",
+        "使用指南"
+      ],
+      "kind": "guide"
+    },
+    {
+      "id": "guide:website-check-report",
+      "site": "portal",
+      "category": "development",
+      "name": "网站检测报告怎么看？DNS、SSL、HTTP 与配置提醒",
+      "description": "用自有工具站演示公开网站检测，理解检测成功、配置提醒和跳过项，再按 DNS、证书、HTTP 与抓取规则逐步核对。",
+      "url": "https://afeiii.com/guides/website-check-report/",
+      "aliases": [
+        "教程",
+        "使用指南"
+      ],
+      "kind": "guide"
+    }
+  ]
+}
