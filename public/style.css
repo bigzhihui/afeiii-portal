@@ -479,7 +479,7 @@ h1 em {
   color: var(--muted);
   font-family: ui-monospace, monospace;
 }
-.guide-card h3 {
+.guide-card :is(h2, h3) {
   font-size: 21px;
   line-height: 1.5;
   margin: 24px 0 10px;

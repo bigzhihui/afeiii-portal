@@ -29,6 +29,16 @@ Cloudflare 官方设置入口：账户级 Web Analytics → Add a site → Manag
 
 ## 维护
 
+### 发布前结构与链接检查
+
+CI 在构建后使用固定版本 lychee 0.24.2 和 Nu Html Checker 26.10.12 检查 `dist`，工具下载校验失败也会阻止通过。离线检查覆盖本地文件、静态路由和页内锚点；站外 HTTP、真实文件处理与性能由独立检查负责。
+
+```sh
+python3 scripts/check_generated_quality.py --bootstrap --root dist --baseline scripts/quality-baseline.json --output /tmp/portal-quality.json
+```
+
+主站 HTML 错误基线为零，失效本地链接必须为零。新增错误类别、既有类别数量增长或 HTML 产物明显缺失会阻止发布；不在普通 CI 中更新基线。基线仅能在人工核对具体存量问题后，以 `--capture-baseline-reason` 明确说明理由再提交。裸百度验证令牌文件单独识别，不作为普通 HTML 文档。
+
 ### 全站工具搜索
 
 `data/tool-catalog.json` 是随源码发布的完整目录快照，独立构建与 CI 不依赖其他仓库。`npm run catalog:sync` 从同级 `tools`、`bentopdf`、`vert`、`web-check` 的实际注册表、中文文案及启用配置生成目录，并加入简历公共入口和本站五篇指南；`npm run catalog:check` 检查快照是否与这些源码一致。工具站增加、下架或改路径后，重新同步、检查公开入口并提交快照，再构建发布主站。不要把上游未启用工具、语言镜像或私人编辑页面当成新工具。

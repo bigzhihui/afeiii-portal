@@ -132,8 +132,8 @@ export const guides = [
   },
 ].map((guide) => ({ ...guide, path: `/guides/${guide.slug}/`, date }));
 
-export function guideCards() {
-  return `<div class="guide-cards">${guides.map((g, i) => `<a class="guide-card" href="${g.path}"><span class="guide-category">${g.category}<span aria-hidden="true">0${i + 1}</span></span><h3>${g.shortTitle}</h3><p>${g.summary}</p><span class="guide-card-end">阅读指南 <span aria-hidden="true">→</span></span></a>`).join("")}</div>`;
+export function guideCards(level = 3) {
+  return `<div class="guide-cards">${guides.map((g, i) => `<a class="guide-card" href="${g.path}"><span class="guide-category">${g.category}<span aria-hidden="true">0${i + 1}</span></span><h${level}>${g.shortTitle}</h${level}><p>${g.summary}</p><span class="guide-card-end">阅读指南 <span aria-hidden="true">→</span></span></a>`).join("")}</div>`;
 }
 
 export function guideHomeSection() {
@@ -141,7 +141,7 @@ export function guideHomeSection() {
 }
 
 export function guideIndex() {
-  return `<main id="main" class="wrap"><section class="guide-index"><nav class="breadcrumbs" aria-label="面包屑"><a href="/">首页</a><span aria-hidden="true">/</span><span aria-current="page">使用指南</span></nav><span class="eyebrow">一步一步，把事情做完</span><h1>使用指南</h1><p class="guide-intro">带着具体问题开始，用样例走完操作，最后检查输出。这里整理图片转换、PDF 处理、开发工具、简历制作和网站检测的使用方法。</p>${guideCards()}<aside class="guide-note"><strong>第一次使用，先试样例</strong><p>指南中的示例不含个人信息。各工具的数据处理方式不同，开始前可以先看<a href="/privacy/">隐私说明</a>，具体支持范围以对应工具页为准。</p></aside></section></main>`;
+  return `<main id="main" class="wrap"><section class="guide-index"><nav class="breadcrumbs" aria-label="面包屑"><a href="/">首页</a><span aria-hidden="true">/</span><span aria-current="page">使用指南</span></nav><span class="eyebrow">一步一步，把事情做完</span><h1>使用指南</h1><p class="guide-intro">带着具体问题开始，用样例走完操作，最后检查输出。这里整理图片转换、PDF 处理、开发工具、简历制作和网站检测的使用方法。</p>${guideCards(2)}<aside class="guide-note"><strong>第一次使用，先试样例</strong><p>指南中的示例不含个人信息。各工具的数据处理方式不同，开始前可以先看<a href="/privacy/">隐私说明</a>，具体支持范围以对应工具页为准。</p></aside></section></main>`;
 }
 
 export function guideArticle(g) {

@@ -17,3 +17,12 @@ jobs:
           node-version: 24
       - run: npm run check
       - run: npm run build
+      - name: Test generated quality gate
+        run: python3 -m unittest discover -s tests -p test_generated_quality.py -q
+      - name: Check generated HTML and local links
+        run: >-
+          python3 scripts/check_generated_quality.py
+          --bootstrap --root dist
+          --tools "${{ runner.temp }}/afeiii-quality-tools"
+          --baseline scripts/quality-baseline.json
+          --output "${{ runner.temp }}/portal-quality.json"
