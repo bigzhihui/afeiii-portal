@@ -1,0 +1,6 @@
+# Import inside afeiii.com, before the catch-all static handle.
+handle /engagement/v1/* {
+  reverse_proxy 127.0.0.1:18767 {
+    header_up X-Engagement-IP {http.request.remote.host}
+  }
+}

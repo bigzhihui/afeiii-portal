@@ -1,0 +1,26 @@
+[Unit]
+Description=Afeiii feedback inbox and anonymous operation counts
+After=network.target
+
+[Service]
+Type=simple
+User=afeiii-engagement
+Group=afeiii-search
+WorkingDirectory=/opt/apps/afeiii-engagement
+ExecStart=/usr/bin/python3 -B /opt/apps/afeiii-engagement/server.py --state /var/lib/afeiii-engagement --catalog /opt/apps/afeiii-engagement/catalog.json --mail-config /etc/afeiii-engagement/mail.json
+Restart=on-failure
+RestartSec=5
+UMask=0027
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/afeiii-engagement
+InaccessiblePaths=/etc/afeiii-search-submit /var/lib/afeiii-search-submit
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+MemoryMax=96M
+CPUQuota=15%
+TasksMax=32
+
+[Install]
+WantedBy=multi-user.target

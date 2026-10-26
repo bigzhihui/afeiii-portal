@@ -17,6 +17,22 @@ Oracle 仅提供静态资源：`/opt/apps/afeiii-portal/releases/<revision>`，`
 
 ## 访问统计
 
+### 主动反馈与匿名操作统计
+
+六站使用本地托管的 Feedback Fin 适配版（Apache-2.0，源码与许可在 `public/engagement/`）。`node scripts/sync-engagement.mjs` 从公开工具目录生成白名单，并同步共享资源与事件助手；随后按各仓库规范格式化、检查和发布。禁止接入第三方录屏或采集输入、文件名、检测目标、账户、简历内容及私有网址。同步不会自动发布。
+
+反馈发送至 `https://afeiii.com/engagement/v1/feedback`；仅用户主动填写的类型、描述、可选邮箱与固定工具标识进入队列。只有本地持久化并返回匹配编号后才显示收到；HTTP 失败保留内容，原内容重试复用同一编号。邮件独立发送至现有所有者通知邮箱，SMTP 接收不代表收件箱投递。浏览器不自动收集设备或错误堆栈。
+
+匿名操作统计默认关闭，在反馈窗口自愿开启，可随时关闭；遵循 DNT/GPC。只接收白名单工具标识与固定阶段，不使用用户ID、Cookie或会话回放。偏好仅在当前站点浏览器中保存一个开关，不跨站同步。随机编号仅对应单次操作，服务器保留24小时去重摘要，长期只存按北京时间汇总的计数。最多保留90天，后台展示含当天的近28日；计数不是人数或文件保存成功量。
+
+首批结果钩子覆盖工具箱共用复制；PDF 合并、压缩与共用下载；VERT 逐次转换及下载；简历文件生成和快捷下载；Web-Check 单项检测任务。入口与结果分开，不以页面访问或点击代替处理成功；未接入、取消、跳过和未收到数据不补零，不据此计算全站成功率。
+
+接收服务 `engagement/server.py` 使用独立用户、SQLite与回环端口18767；运行单元为 `engagement/afeiii-engagement.service`。安装时将白名单固定复制为 `/opt/apps/afeiii-engagement/catalog.json`，状态目录 `/var/lib/afeiii-engagement` 为服务所有、`afeiii-search`组只读，数据库0600，私有报告0640。邮件配置独立放 `/etc/afeiii-engagement/mail.json`，0600，仅复用原发件账户与已确认收件地址，不能公开原搜索授权。保留90天的业务数据不含网络日志；反向代理不得记录提交正文。
+
+只在主站 Caddy 导入 `engagement/engagement.caddy`；服务不公开管理接口。原认证后台通过 `--engagement-state /var/lib/afeiii-engagement` 读取报告，仍禁止写入。其他站仅为 `connect-src` 添加精确 `https://afeiii.com`；不放宽脚本来源、不改账户认证。上线前先备份现有 Caddy，校验完整配置，逐站验证反馈与数据边界后热加载；停止可停用接收服务并回退网站版本，不动业务数据库。
+
+验证：`python -B -m unittest discover -s engagement -p test_server.py -q` 覆盖持久化、幂等、并发去重、字段拒绝、限流、保留期及SMTP失败；`node engagement/browser-check.cjs` 使用真实Chrome但隔离页面/模拟接口，验证六域名1440/375组件交互、失败重试和隐私边界，不能代替各应用实际功能与正式站验收。
+
 已使用所有者提供的公开 beacon 标识启用六站统一基础统计；主站不使用统计 Cookie。可通过公开的 `CF_WEB_ANALYTICS_TOKEN`（32 位十六进制 beacon 标识，**不是 Cloudflare API Token**）覆盖默认标识后构建。生成页面会加入官方脚本，隐私页同步说明。没有标识时保持关闭，不用占位值伪装已接入。
 
 Cloudflare 官方设置入口：账户级 Web Analytics → Add a site → Manage site → JS snippet。主域名标识可覆盖同一主域名下的子域名。IT-Tools 与 BentoPDF 的 Pages 项目已在 Metrics → Web Analytics 关闭原自动注入，修改开关后须重新部署。`Cache-Control: no-transform` 仅防护边缘内容转换，不能替代 Pages 项目开关。简历与转换站仅在公开说明页直接加载，并禁用 SPA 路由跟踪。统计仅反映收到的浏览器访问事件，不能当作真实用户数或转换成功量。不能采集文件名、文件内容、搜索输入或个人简历。
