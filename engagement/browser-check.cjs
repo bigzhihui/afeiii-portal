@@ -70,9 +70,35 @@ const fixture = `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><
       }
       await page.keyboard.press('Escape');
       assert.equal(await page.locator('dialog').evaluate(el=>el.open), false);
+      assert.equal(await page.getByRole('button', {name:'反馈问题', exact:true}).evaluate(el=>el===document.activeElement), true);
       checks++;
       await context.close();
     }
-    console.log(JSON.stringify({shared_component_cases:checks, desktop:1440, mobile:375, privacy:'passed', http_failure_and_retry:'passed', production:false}));
+    for (const signal of ['doNotTrack', 'globalPrivacyControl']) {
+      const context = await browser.newContext();
+      const page = await context.newPage();
+      let posts = 0;
+      await context.addInitScript(signal => {
+        localStorage.setItem('afeiii-anonymous-usage', 'yes');
+        Object.defineProperty(navigator, signal, {value:signal==='doNotTrack'?'1':true});
+      }, signal);
+      await context.route('**/*', async route => {
+        const url = new URL(route.request().url());
+        if (route.request().method()==='POST') {posts++;return route.fulfill({status:200,body:'{"received":true}'});}
+        if (url.pathname.startsWith('/engagement/')) {
+          const filename=path.basename(url.pathname);
+          return route.fulfill({status:200,contentType:filename.endsWith('.js')?'text/javascript':filename.endsWith('.css')?'text/css':'application/json',body:fs.readFileSync(path.join(source,filename))});
+        }
+        return route.fulfill({status:200,contentType:'text/html',body:fixture});
+      });
+      await page.goto('https://afeiii.com/');
+      await page.getByRole('button',{name:'反馈问题',exact:true}).click();
+      assert.ok(await page.getByLabel('允许匿名操作统计',{exact:false}).isDisabled());
+      await page.evaluate(()=>document.dispatchEvent(new CustomEvent('afeiii:usage',{detail:{id:crypto.randomUUID(),phase:'start',tool:'home'}})));
+      await page.waitForTimeout(100);
+      assert.equal(posts,0,signal+' overrides stored opt-in');
+      await context.close();
+    }
+    console.log(JSON.stringify({shared_component_cases:checks, privacy_signal_cases:2, desktop:1440, mobile:375, privacy:'passed', http_failure_and_retry:'passed', production:false}));
   } finally { await browser.close(); }
 })().catch(error=>{console.error(error);process.exitCode=1;});

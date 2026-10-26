@@ -176,9 +176,10 @@ class Store:
                 db.execute("UPDATE feedback SET mail_state=?,attempts=attempts+1,next_attempt=? WHERE id=?", ("accepted" if accepted else "failed", int(time.time()) + 3600, row["id"]))
 
     def maintain(self):
+        keep_day = (dt.datetime.now(dt.timezone(dt.timedelta(hours=8))).date() - dt.timedelta(days=89)).isoformat()
         with self.connect() as db:
             db.execute("DELETE FROM feedback WHERE created<?", (self.cutoff(90),))
-            db.execute("DELETE FROM counts WHERE day<?", (self.cutoff(90)[:10],))
+            db.execute("DELETE FROM counts WHERE day<?", (keep_day,))
             db.execute("DELETE FROM dedup WHERE expires<?", (int(time.time()),))
         temporary = self.state / "report.tmp"
         temporary.write_text(json.dumps(self.report(), ensure_ascii=False), encoding="utf-8")

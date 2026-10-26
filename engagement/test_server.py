@@ -1,4 +1,5 @@
 import concurrent.futures
+import datetime as dt
 import http.client
 import json
 from pathlib import Path
@@ -107,6 +108,17 @@ class FeedbackTests(unittest.TestCase):
             smtp.return_value.__enter__.return_value.send_message.return_value = {}
             self.store.deliver(config)
         self.assertEqual(self.store.report()["mail_pending"], 0)
+
+    def test_count_retention_uses_ninety_beijing_calendar_days(self):
+        today = dt.datetime.now(dt.timezone(dt.timedelta(hours=8))).date()
+        retained = str(today - dt.timedelta(days=89))
+        expired = str(today - dt.timedelta(days=90))
+        with self.store.connect() as db:
+            for day in (retained, expired):
+                db.execute("INSERT INTO counts VALUES(?,'portal','home','entry',1)", (day,))
+        self.store.maintain()
+        with self.store.connect() as db:
+            self.assertEqual([r[0] for r in db.execute("SELECT day FROM counts")], [retained])
 
     def test_http_cors_body_limits_and_no_public_report(self):
         server = make_server(self.store, 0)
