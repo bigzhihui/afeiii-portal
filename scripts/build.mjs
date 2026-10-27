@@ -84,7 +84,7 @@ function page(title, description, path, body, script = false, article = null) {
   const schema = article
     ? { "@context": "https://schema.org", "@type": "Article", headline: title, description, mainEntityOfPage: `${origin}${path}`, image: `${origin}/guides/images/${article.image}.jpg`, datePublished: article.date, dateModified: article.date, author: { "@type": "Organization", name: "十三月维护者", url: `${origin}/about/` }, publisher: { "@type": "Organization", name: "十三月", url: origin } }
     : { "@context": "https://schema.org", "@type": path === "/" ? "WebSite" : "WebPage", name: path === "/" ? "十三月" : title, url: `${origin}${path}`, description };
-  return `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${title} · 十三月</title><meta name="description" content="${description}"><link rel="canonical" href="${origin}${path}"><meta property="og:type" content="${article ? "article" : "website"}"><meta property="og:title" content="${title} · 十三月"><meta property="og:description" content="${description}"><meta property="og:url" content="${origin}${path}"><meta name="theme-color" content="#f6f5ef"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css">${script ? '<link rel="stylesheet" href="/catalog.css">' : ""}<script type="application/ld+json">${JSON.stringify(schema)}</script>${script ? '<script type="module" src="/app.js"></script>' : ""}</head><body><a class="skip" href="#main">跳到主要内容</a><header><div class="wrap topbar"><a class="brand" href="/" aria-label="十三月首页"><span class="brand-mark" aria-hidden="true">13</span><span>十三月<small>AFEIII.COM</small></span></a><nav class="topnav" aria-label="主导航"><a href="/#tools">全部工具</a><a href="/guides/"${path === "/guides/" ? ' aria-current="page"' : ""}>使用指南</a><a class="about-link" href="/about/">关于十三月</a><a class="status-link" href="https://status.afeiii.com/">服务状态 ↗</a></nav></div></header>${body}${footer}${beacon}</body></html>`;
+  return `<!doctype html><html lang="zh-CN"><head><link rel="stylesheet" href="/engagement/feedbackfin.css"><script defer src="/engagement/feedbackfin.js"></script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${title} · 十三月</title><meta name="description" content="${description}"><link rel="canonical" href="${origin}${path}"><meta property="og:type" content="${article ? "article" : "website"}"><meta property="og:title" content="${title} · 十三月"><meta property="og:description" content="${description}"><meta property="og:url" content="${origin}${path}"><meta name="theme-color" content="#f6f5ef"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css">${script ? '<link rel="stylesheet" href="/catalog.css">' : ""}<script type="application/ld+json">${JSON.stringify(schema)}</script>${script ? '<script type="module" src="/app.js"></script>' : ""}</head><body><a class="skip" href="#main">跳到主要内容</a><header><div class="wrap topbar"><a class="brand" href="/" aria-label="十三月首页"><span class="brand-mark" aria-hidden="true">13</span><span>十三月<small>AFEIII.COM</small></span></a><nav class="topnav" aria-label="主导航"><a href="/#tools">全部工具</a><a href="/guides/"${path === "/guides/" ? ' aria-current="page"' : ""}>使用指南</a><a class="about-link" href="/about/">关于十三月</a><a class="status-link" href="https://status.afeiii.com/">服务状态 ↗</a></nav></div></header>${body}${footer}${beacon}</body></html>`;
 }
 const cards = sites
   .map(
@@ -118,7 +118,7 @@ const articles = {
   },
   privacy: {
     title: "隐私说明",
-    intro: "更新日期：2026-10-19。本页说明主站与五个工具站的数据处理区别。",
+    intro: "更新日期：2026-10-26。本页说明主站与五个工具站的数据处理区别。",
     sections: [
       [
         "主站导航与搜索",
@@ -131,6 +131,10 @@ const articles = {
       [
         "简历与网站检测",
         "简历站登录后会将账户与简历保存到服务器，并按分享设置提供公开链接。网站检测会把输入的公开网址发送到检测服务器，由服务器查询 DNS、证书或访问该网站。不要输入内网、含令牌的网址或不希望被访问的地址。",
+      ],
+      [
+        "主动反馈与匿名操作统计",
+        "反馈仅发送你主动填写的类型、描述、可选邮箱及公开工具名称，保存最多90天，用于回复和改进。请勿填写敏感文件、简历、密码或令牌。匿名操作统计默认关闭，可在反馈窗口中选择开启；仅记录固定工具标识和开始、成功、失败、触发下载等次数，不采集输入、文件名、文件内容、检测目标或私有网址，不使用用户标识或会话回放。关闭后停止上报，并尊重浏览器DNT/GPC。统计按北京时间汇总，最多保存90天，不能视为真实人数或文件保存成功。邮件服务可能按其规则保存已发送反馈；可联系support@afeiii.com申请删除。",
       ],
       [
         "访问统计",

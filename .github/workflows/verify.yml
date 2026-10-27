@@ -16,6 +16,10 @@ jobs:
         with:
           node-version: 24
       - run: npm run check
+      - name: Feedback API and privacy contracts
+        run: python3 -B -m unittest discover -s engagement -p test_server.py -q
+      - name: Shared feedback JavaScript syntax
+        run: node --check public/engagement/feedbackfin.js
       - run: npm run build
       - name: Test generated quality gate
         run: python3 -m unittest discover -s tests -p test_generated_quality.py -q
