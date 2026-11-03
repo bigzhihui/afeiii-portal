@@ -5,6 +5,9 @@ const buttons = [...document.querySelectorAll("[data-filter]")];
 const siteSelect = document.querySelector("#site-filter");
 const list = document.querySelector("#tool-list");
 const result = document.querySelector("#search-result");
+const feedback = document.querySelector("#search-feedback");
+const summary = document.querySelector("#search-summary");
+const viewResults = document.querySelector("#view-results");
 const more = document.querySelector("#show-more");
 const empty = document.querySelector("#search-empty");
 const entries = JSON.parse(document.querySelector("#tool-catalog").textContent);
@@ -25,11 +28,21 @@ function filter(reset = true) {
   }
   list.append(fragment);
   result.textContent = matches.length ? `共 ${matches.length} 项，显示 ${Math.min(limit, matches.length)} 项` : "没有匹配的工具";
+  if (feedback && summary) {
+    const summaryText = "找到 " + matches.length + " 项";
+    if (summary.textContent !== summaryText) summary.textContent = summaryText;
+    feedback.hidden = false;
+  }
   empty.hidden = matches.length > 0;
   more.hidden = matches.length <= limit;
   more.textContent = `再显示 ${Math.min(pageSize, matches.length - limit)} 项`;
 }
 
+viewResults?.addEventListener("click", (event) => {
+  event.preventDefault();
+  result.scrollIntoView({ block: "start" });
+  result.focus({ preventScroll: true });
+});
 input.addEventListener("input", () => filter());
 siteSelect.addEventListener("change", () => filter());
 for (const button of buttons) button.addEventListener("click", () => {
