@@ -1,5 +1,7 @@
 afeiii.com {
   import /etc/caddy/afeiii-engagement.caddy
+    import /etc/caddy/afeiii-indexnow-portal.caddy
+  import /etc/caddy/afeiii-search-dashboard.caddy
   root * /opt/apps/afeiii-portal/current
   encode zstd gzip
   header {
