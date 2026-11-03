@@ -183,6 +183,30 @@ h1 em {
   gap: 10px;
   align-items: center;
 }
+.search-box:focus-within {
+  outline: 3px solid var(--green);
+  outline-offset: 3px;
+}
+.search-feedback {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  margin-top: 8px;
+  color: var(--green);
+  font-size: 14px;
+}
+.search-feedback a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.catalog-count:focus {
+  outline: 3px solid var(--green);
+  outline-offset: 3px;
+}
 .search-box input {
   width: 100%;
   min-width: 0;
