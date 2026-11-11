@@ -137,7 +137,7 @@ export function guideCards(level = 3) {
 }
 
 export function guideHomeSection() {
-  return `<section class="guide-home" aria-labelledby="guide-heading"><div class="section-head"><div><span class="eyebrow">使用指南</span><h2 id="guide-heading">需要一点说明？跟着样例试一遍。</h2><p>从选择格式到检查结果，把每一步讲清楚。</p></div><a class="section-link" href="/guides/">全部指南 →</a></div>${guideCards()}</section>`;
+  return `<section class="guide-home" aria-labelledby="guide-heading"><div class="section-head"><h2 id="guide-heading">使用指南</h2><a class="section-link" href="/guides/">全部指南 →</a></div>${guideCards()}</section>`;
 }
 
 export function guideIndex() {

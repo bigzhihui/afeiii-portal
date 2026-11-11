@@ -31,7 +31,7 @@ function filter(reset = true) {
   if (feedback && summary) {
     const summaryText = "找到 " + matches.length + " 项";
     if (summary.textContent !== summaryText) summary.textContent = summaryText;
-    feedback.hidden = false;
+    feedback.hidden = !input.value.trim() && category === "all" && siteSelect.value === "all";
   }
   empty.hidden = matches.length > 0;
   more.hidden = matches.length <= limit;

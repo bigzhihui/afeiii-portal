@@ -10,61 +10,27 @@ const sites = [
   {
     name: "PDF 工具",
     host: "pdf",
-    category: "documents",
-    icon: "PDF",
     badge: "浏览器本地处理",
-    tone: "#aa583a",
-    wash: "#fbede4",
-    description: "合并、拆分、压缩和整理 PDF。把零散文档，变成一份顺手的文件。",
-    tags: ["合并与拆分", "PDF 转图片", "页面整理"],
   },
   {
     name: "格式转换",
     host: "convert",
-    category: "media",
-    icon: "↔",
     badge: "免注册 · 本地转换",
-    tone: "#694b8a",
-    wash: "#f1eafa",
-    description:
-      "转换图片、音频、文档及支持的视频。先查看支持范围，再选择适合文件的格式。",
-    tags: ["JPG / PNG / WebP", "音频互转", "DOCX / Markdown"],
   },
   {
     name: "开发工具箱",
     host: "tools",
-    category: "development",
-    icon: "{ }",
-    badge: "开发与日常效率",
-    tone: "#396d9b",
-    wash: "#eaf2fa",
-    description:
-      "JSON 格式化、Base64 编解码、哈希与文本处理。打开即用的开发小工具。",
-    tags: ["JSON", "编码解码", "文本处理"],
+    badge: "浏览器本地处理",
   },
   {
     name: "在线简历",
     host: "resume",
-    category: "career",
-    icon: "CV",
-    badge: "账号保存与管理",
-    tone: "#986c26",
-    wash: "#faf2df",
-    description:
-      "从模板开始整理经历，编辑并导出简历。登录后可在不同设备继续修改。",
-    tags: ["简历模板", "在线编辑", "PDF 导出"],
+    badge: "需要登录 · 云端保存",
   },
   {
     name: "网站检测",
     host: "check",
-    category: "development",
-    icon: "◎",
     badge: "公开网址检测",
-    tone: "#267062",
-    wash: "#e5f3ee",
-    description:
-      "查看 DNS、SSL、HTTP 响应和 SEO 标签，为自己的网站排查基础配置。",
-    tags: ["DNS / SSL", "HTTP 响应", "SEO 检查"],
   },
 ];
 const nav = `<a href="/">主站</a>${sites.map((s) => `<a href="https://${s.host}.afeiii.com/">${s.name}</a>`).join("")}`;
@@ -84,15 +50,40 @@ function page(title, description, path, body, script = false, article = null) {
   const schema = article
     ? { "@context": "https://schema.org", "@type": "Article", headline: title, description, mainEntityOfPage: `${origin}${path}`, image: `${origin}/guides/images/${article.image}.jpg`, datePublished: article.date, dateModified: article.date, author: { "@type": "Organization", name: "十三月维护者", url: `${origin}/about/` }, publisher: { "@type": "Organization", name: "十三月", url: origin } }
     : { "@context": "https://schema.org", "@type": path === "/" ? "WebSite" : "WebPage", name: path === "/" ? "十三月" : title, url: `${origin}${path}`, description };
-  return `<!doctype html><html lang="zh-CN"><head><link rel="stylesheet" href="/engagement/feedbackfin.css"><script defer src="/engagement/feedbackfin.js"></script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${title} · 十三月</title><meta name="description" content="${description}"><link rel="canonical" href="${origin}${path}"><meta property="og:type" content="${article ? "article" : "website"}"><meta property="og:title" content="${title} · 十三月"><meta property="og:description" content="${description}"><meta property="og:url" content="${origin}${path}"><meta name="theme-color" content="#f6f5ef"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css">${script ? '<link rel="stylesheet" href="/catalog.css">' : ""}<script type="application/ld+json">${JSON.stringify(schema)}</script>${script ? '<script type="module" src="/app.js"></script>' : ""}</head><body><a class="skip" href="#main">跳到主要内容</a><header><div class="wrap topbar"><a class="brand" href="/" aria-label="十三月首页"><span class="brand-mark" aria-hidden="true">13</span><span>十三月<small>AFEIII.COM</small></span></a><nav class="topnav" aria-label="主导航"><a href="/#tools">全部工具</a><a href="/guides/"${path === "/guides/" ? ' aria-current="page"' : ""}>使用指南</a><a class="about-link" href="/about/">关于十三月</a><a class="status-link" href="https://status.afeiii.com/">服务状态 ↗</a></nav></div></header>${body}${footer}${beacon}</body></html>`;
+  return `<!doctype html><html lang="zh-CN"><head><link rel="stylesheet" href="/engagement/feedbackfin.css"><script defer src="/engagement/feedbackfin.js"></script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${title} · 十三月</title><meta name="description" content="${description}"><link rel="canonical" href="${origin}${path}"><meta property="og:type" content="${article ? "article" : "website"}"><meta property="og:title" content="${title} · 十三月"><meta property="og:description" content="${description}"><meta property="og:url" content="${origin}${path}"><meta name="theme-color" content="#f6f5ef"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css">${script ? '<link rel="stylesheet" href="/catalog.css">' : ""}<script type="application/ld+json">${JSON.stringify(schema)}</script>${script ? '<script type="module" src="/app.js"></script>' : ""}</head><body><a class="skip" href="#main">跳到主要内容</a><header><div class="wrap topbar"><a class="brand" href="/" aria-label="十三月首页"><span class="brand-mark" aria-hidden="true">13</span><span>十三月<small>AFEIII.COM</small></span></a><nav class="topnav" aria-label="主导航">${path === "/" ? "" : '<a href="/#tools">全部工具</a>'}<a href="/guides/"${path === "/guides/" ? ' aria-current="page"' : ""}>使用指南</a><a class="about-link" href="/about/">关于十三月</a><a class="status-link" href="https://status.afeiii.com/">服务状态 ↗</a></nav></div></header>${body}${footer}${beacon}</body></html>`;
 }
-const cards = sites
+const siteLinks = sites
   .map(
     (s) =>
-      `<a class="tool" style="--tone:${s.tone};--wash:${s.wash}" href="https://${s.host}.afeiii.com/"><div class="tool-top"><span class="icon" aria-hidden="true">${s.icon}</span><span class="badge">${s.badge}</span></div><h3>${s.name}</h3><p>${s.description}</p><div class="tags">${s.tags.map((t) => `<span>${t}</span>`).join("")}</div><div class="card-end"><span>${s.host}.afeiii.com</span><strong aria-hidden="true">↗</strong></div></a>`,
+      `<a class="site-link" href="https://${s.host}.afeiii.com/"><span class="site-link-title">${s.name}<span aria-hidden="true">↗</span></span><span class="site-link-note">${s.badge}</span></a>`,
   )
   .join("");
-const home = `<main id="main" class="wrap"><section class="hero" aria-labelledby="hero-title"><div><span class="eyebrow">A SMALL TOOL FOR EVERYDAY WORK</span><h1 id="hero-title">把手头的事，<br><em>顺手做完。</em></h1><p>处理文件、整理文档、写好简历、检查网站。<br>五个实用工具站，从这里开始。</p><div class="hero-note"><span>开源项目构建</span><span>中文使用体验</span><span>清楚说明数据去向</span></div></div><div class="search-panel"><label for="tool-search">今天想完成什么？</label><div class="search-box"><span aria-hidden="true">⌕</span><input id="tool-search" type="search" placeholder="试试 PDF 压缩、JSON 对比、图片转换…" autocomplete="off" aria-controls="tool-list"><kbd aria-hidden="true">/</kbd></div><div class="search-feedback" id="search-feedback" hidden><span id="search-summary" role="status" aria-live="polite" aria-atomic="true"></span><span aria-hidden="true">·</span><a id="view-results" href="#search-result">查看结果</a></div><p class="search-help">常用：<a href="https://pdf.afeiii.com/zh/merge-pdf">合并 PDF</a> · <a href="https://convert.afeiii.com/">图片转换</a> · <a href="https://tools.afeiii.com/json-prettify">JSON 格式化</a></p><p class="search-local">支持中文名称、英文名称和常用别名，搜索词只在当前浏览器处理。</p></div></section><section id="tools" aria-labelledby="tools-title"><div class="section-head"><div><h2 id="tools-title">找到具体工具，直接开始</h2><p>全部工具与功能入口均可搜索；工具、共用入口和指南分别标明。</p></div><button class="text-button" id="clear-search">重置筛选</button></div><div class="catalog-controls"><div class="filters" role="group" aria-label="按用途筛选"><button data-filter="all" aria-pressed="true">全部</button><button data-filter="documents" aria-pressed="false">PDF 与文档</button><button data-filter="media" aria-pressed="false">图片与音视频</button><button data-filter="development" aria-pressed="false">开发与网站</button><button data-filter="career" aria-pressed="false">求职简历</button></div><label class="site-filter" for="site-filter">所属站点<select id="site-filter"><option value="all">全部站点与指南</option><option value="pdf">PDF 工具</option><option value="tools">开发工具箱</option><option value="convert">格式转换</option><option value="resume">在线简历</option><option value="check">网站检测</option><option value="portal">使用指南</option></select></label></div>${renderCatalog(catalog)}</section><section class="site-directory" aria-labelledby="sites-title"><div class="section-head"><div><h2 id="sites-title">按站点访问</h2><p>也可以进入各站，浏览完整工具与使用说明。</p></div></div><div class="cards">${cards}</div></section><section class="workflow"><div><span class="eyebrow">QUICK START</span><h2>从一件具体的小事开始</h2><div class="tasks"><a href="https://pdf.afeiii.com/zh/merge-pdf">把多份 PDF 合成一份<small>PDF 工具</small><span aria-hidden="true">↗</span></a><a href="https://convert.afeiii.com/">把图片转换成另一种格式<small>格式转换</small><span aria-hidden="true">↗</span></a><a href="https://tools.afeiii.com/json-prettify">整理一段 JSON 数据<small>开发工具箱</small><span aria-hidden="true">↗</span></a><a href="https://resume.afeiii.com/">从模板开始制作简历<small>在线简历</small><span aria-hidden="true">↗</span></a><a href="https://check.afeiii.com/">看看网站的证书和 DNS<small>网站检测</small><span aria-hidden="true">↗</span></a></div></div><aside class="privacy-box"><span class="eyebrow">YOUR FILES, YOUR CHOICE</span><h2>先了解处理方式，<br>再放心开始。</h2><p>PDF 工具与格式转换在浏览器中处理文件，首次使用需下载引擎。格式和大文件支持受浏览器与设备能力限制。</p><p>简历站提供账号与云端保存；网站检测会由服务器访问你输入的公开网址。不同工具的数据处理方式各有说明。</p><a href="/privacy/">了解各站的数据处理方式 →</a></aside></section>${guideHomeSection()}</main>`;
+const home = `<main id="main" class="wrap">
+<section class="hero" aria-labelledby="hero-title">
+  <div><h1 id="hero-title">十三月在线工具</h1><p>PDF、格式转换、开发工具、简历与网站检测</p></div>
+  <div class="search-panel">
+    <label for="tool-search">搜索工具</label>
+    <div class="search-box"><span aria-hidden="true">⌕</span><input id="tool-search" type="search" placeholder="PDF 压缩、JSON 对比、图片转换…" autocomplete="off" aria-controls="tool-list" aria-describedby="search-local"><kbd aria-hidden="true">/</kbd></div>
+    <div class="search-feedback" id="search-feedback" hidden><span id="search-summary" role="status" aria-live="polite" aria-atomic="true"></span><span aria-hidden="true">·</span><a id="view-results" href="#search-result">查看结果</a></div>
+    <nav class="search-shortcuts" aria-label="常用工具"><a href="https://pdf.afeiii.com/zh/merge-pdf">合并 PDF</a><a href="https://convert.afeiii.com/">图片转换</a><a href="https://tools.afeiii.com/json-prettify">JSON 格式化</a></nav>
+    <p class="search-local" id="search-local">搜索词仅在当前浏览器处理。</p>
+  </div>
+</section>
+<section id="tools" aria-labelledby="tools-title">
+  <div class="section-head"><h2 id="tools-title">全部工具</h2><button class="text-button" id="clear-search">重置筛选</button></div>
+  <div class="catalog-controls">
+    <div class="filters" role="group" aria-label="按用途筛选"><button data-filter="all" aria-pressed="true">全部</button><button data-filter="documents" aria-pressed="false">PDF 与文档</button><button data-filter="media" aria-pressed="false">图片与音视频</button><button data-filter="development" aria-pressed="false">开发与网站</button><button data-filter="career" aria-pressed="false">求职简历</button></div>
+    <label class="site-filter" for="site-filter">所属站点<select id="site-filter"><option value="all">全部站点与指南</option><option value="pdf">PDF 工具</option><option value="tools">开发工具箱</option><option value="convert">格式转换</option><option value="resume">在线简历</option><option value="check">网站检测</option><option value="portal">使用指南</option></select></label>
+  </div>
+  ${renderCatalog(catalog)}
+</section>
+<section class="site-directory" aria-labelledby="sites-title">
+  <div class="section-head"><h2 id="sites-title">按站点浏览</h2></div>
+  <nav class="site-links" aria-label="工具站导航">${siteLinks}</nav>
+  <p class="processing-note">工具箱、PDF 与格式转换在浏览器中处理数据；PDF 和转换首次使用需下载引擎，支持范围受设备与浏览器限制。简历需账号并在服务器保存，网站检测由服务器访问公开网址。<a href="/privacy/">数据处理说明 →</a></p>
+</section>
+${guideHomeSection()}
+</main>`;
 const articles = {
   about: {
     title: "关于十三月",
