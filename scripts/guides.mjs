@@ -49,7 +49,7 @@ export const guides = [
       ["为什么压缩后不能复制文字了？", "如果使用 Photon，页面已被渲染为图片，原有文字层不会保留。这是该算法的处理方式。需要复制和搜索文字时，应保留原文件或选择适合的结构优化方式，并检查输出。"],
       ["合并后的纸张尺寸为什么不一致？", "不同尺寸或方向的原页面可以合并在同一个文档中。合并并不自动统一纸张；下载后检查每页，确有需要再使用页面尺寸或旋转工具。"],
       ["PDF 会传到服务器吗？", "本站合并与压缩在浏览器中运行；网页、字体和必要引擎需要通过网络加载。文件较大时受设备内存限制。演示样例可以先帮助你确认当前浏览器能完成操作。"],
-    ])}</section><section class="guide-sources"><h2>验证说明</h2><p>本页使用本站提供的两份单页演示 PDF，实测文件拖动、页码范围与 Page Mode 排列，下载后逐页渲染核对顺序；另验证 Photon 均衡压缩的下载结果。引擎与算法说明对应<a href="https://github.com/bigzhihui/bentopdf/blob/main/src/js/logic/compress-pdf-page.ts">本站压缩实现</a>。Condense 与外部引擎配置未在本页实测；验证也不覆盖所有字体、加密文件、表单与数字签名。</p></section>`,
+    ])}</section><section class="guide-sources"><h2>验证说明</h2><p>本页使用本站提供的两份单页演示 PDF，实测文件拖动、页码范围与 Page Mode 排列，下载后逐页渲染核对顺序；另验证 Photon 均衡压缩的下载结果。引擎与算法说明对应<a href="https://github.com/bigzhihui/afeiii-pdf/blob/main/src/js/logic/compress-pdf-page.ts">本站压缩实现</a>。Condense 与外部引擎配置未在本页实测；验证也不覆盖所有字体、加密文件、表单与数字签名。</p></section>`,
   },
   {
     slug: "json-formatting",
@@ -83,7 +83,7 @@ export const guides = [
       ["为什么排序后看起来与原文不同？", "排序会递归调整对象键名的顺序，数组内元素的先后不变。若你需要按接口返回顺序阅读，可以关闭“按键名排序”。这不是逐字保留原文的工具。"],
       ["大整数可以直接格式化吗？", "工具使用 JavaScript 数值解析。超过安全整数范围的数字可能发生精度变化，不能假定格式化后仍准确。订单号、账号和其他无需计算的标识，请在生成数据时使用带引号的字符串。"],
       ["注释为什么消失了？", "输入允许 JSON5，但输出通过 JSON 序列化生成，注释不会保留。只用于排版、需要完整保留注释的配置文件，应使用对应格式的编辑器。"],
-    ])}</section><section class="guide-sources"><h2>参考与验证范围</h2><p>标准语法参考 <a href="https://www.rfc-editor.org/rfc/rfc8259">RFC 8259</a>；本站解析、排序与输出方式见<a href="https://github.com/bigzhihui/it-tools/blob/main/src/tools/json-viewer/json.models.ts">JSON 格式化实现</a>。本页以演示样例核对实时输出、复制、键名排序、数组顺序、无效输入提示和本地保存；大文件、所有 JSON5 扩展及业务规则不在本页验证范围。</p></section>`,
+    ])}</section><section class="guide-sources"><h2>参考与验证范围</h2><p>标准语法参考 <a href="https://www.rfc-editor.org/rfc/rfc8259">RFC 8259</a>；本站解析、排序与输出方式见<a href="https://github.com/bigzhihui/afeiii-tools/blob/main/src/tools/json-viewer/json.models.ts">JSON 格式化实现</a>。本页以演示样例核对实时输出、复制、键名排序、数组顺序、无效输入提示和本地保存；大文件、所有 JSON5 扩展及业务规则不在本页验证范围。</p></section>`,
   },
   {
     slug: "resume-create-export",
